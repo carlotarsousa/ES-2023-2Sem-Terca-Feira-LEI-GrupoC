@@ -9,26 +9,24 @@ import java.io.IOException;
 
 public class Main{
     public static void main(String[] args) throws IOException {
-        String inputFile = "C:\\Users\\gmigu\\Documents\\3ano\\2sem\\ES\\src\\horario_exemplo.csv"; // Nome do arquivo CSV de entrada
-        String outputFile = "output.json"; // Nome do arquivo JSON de saída
+        String inputFile = "C:\\Users\\gmigu\\Documents\\3ano\\2sem\\ES\\src\\horario_exemplo.csv";
+        String outputFile = "output.json";
 
         try {
-            // Ler o arquivo CSV
             BufferedReader br = new BufferedReader(new FileReader(inputFile));
             String line;
             JSONArray jsonArray = new JSONArray();
 
-            boolean firstLine = true; // Flag para identificar a primeira linha (cabeçalho)
+            boolean firstLine = true;
             while ((line = br.readLine()) != null) {
                 System.out.println(line);
                 if (firstLine) {
                     firstLine = false;
-                    continue; // Ignorar a primeira linha (cabeçalho)
+                    continue;
                 }
-                // Dividir a linha em colunas usando o separador ";"
+
                 String[] columns = line.split(";", -1);
 
-                // Criar um objeto JSON para representar os dados da linha
                 JSONObject jsonObject = new JSONObject();
                 jsonObject.put("Curso", columns[0]);
                 jsonObject.put("Unidade Curricular", columns[1]);
@@ -42,13 +40,11 @@ public class Main{
                 jsonObject.put("Sala atribuída à aula", columns[9]);
                 jsonObject.put("Lotação da sala", columns[10]);
 
-                // Adicionar o objeto JSON ao array de JSON
                 jsonArray.put(jsonObject);
             }
 
-            // Escrever o array de JSON em um arquivo JSON
             FileWriter fw = new FileWriter(outputFile);
-            fw.write(jsonArray.toString(4)); // Utilizar 4 espaços de indentação para formatar o JSON
+            fw.write(jsonArray.toString(4));
             fw.flush();
             fw.close();
 
