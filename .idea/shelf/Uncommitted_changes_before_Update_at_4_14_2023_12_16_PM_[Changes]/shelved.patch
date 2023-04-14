@@ -1,0 +1,211 @@
+Index: src/main/java/Horario.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>public class Horario {\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/Horario.java b/src/main/java/Horario.java
+--- a/src/main/java/Horario.java	(revision e2fdce0e18acf5b54853d129370bfd4aac83dc78)
++++ b/src/main/java/Horario.java	(date 1681470939017)
+@@ -1,2 +1,80 @@
++import java.io.BufferedReader;
++import java.io.FileReader;
++import java.io.IOException;
++import java.text.DateFormat;
++import java.text.ParseException;
++import java.text.SimpleDateFormat;
++import java.util.ArrayList;
++import java.util.Date;
++import java.util.List;
++
+ public class Horario {
+-}
++    private String curso;
++    private String unidadeCurricular;
++    private String turno;
++    private String turma;
++    private int inscritos;
++    private String diaDaSemana;
++    private Date horaInicioDaAula;
++    private Date horaFimDaAula;
++    private Date dataAula;
++    private String salaAtribuida;
++    private int lotacaoSala;
++
++    public Horario(String curso, String unidadeCurricular, String turno, String turma, int inscritos,
++                   String diaDaSemana, Date horaInicioDaAula, Date horaFimDaAula, Date dataAula,
++                   String salaAtribuida, int lotacaoSala) {
++        this.curso = curso;
++        this.unidadeCurricular = unidadeCurricular;
++        this.turno = turno;
++        this.turma = turma;
++        this.inscritos = inscritos;
++        this.diaDaSemana = diaDaSemana;
++        this.horaInicioDaAula = horaInicioDaAula;
++        this.horaFimDaAula = horaFimDaAula;
++        this.dataAula = dataAula;
++        this.salaAtribuida = salaAtribuida;
++        this.lotacaoSala = lotacaoSala;
++    }
++
++    public static List<Horario> createHorarioCSV(String file) throws IOException, ParseException, ParseException {
++        List<Horario> horarios = new ArrayList<>();
++        BufferedReader br = new BufferedReader(new FileReader(file));
++        String line;
++        boolean firstLine = true;
++        DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
++
++        while ((line = br.readLine()) != null) {
++            if (firstLine) {
++                firstLine = false;
++                continue;
++            }
++
++            String[] fields = line.split(",");
++            System.out.println(fields.toString());
++            String curso = fields[0].trim();
++            String unidadeCurricular = fields[1].trim();
++            String turno = fields[2].trim();
++            String turma = fields[3].trim();
++            int inscritosNoTurno = Integer.parseInt(fields[4].trim());
++            String diaDaSemana = fields[5].trim();
++            Date horaInicioDaAula = dateFormat.parse(fields[6].trim());
++            Date horaFimDaAula = dateFormat.parse(fields[7].trim());
++            Date dataDaAula = dateFormat.parse(fields[8].trim());
++            String salaAtribuida = fields[9].trim();
++            int lotacaoDaSala = Integer.parseInt(fields[10].trim());
++
++            Horario horario = new Horario(curso, unidadeCurricular, turno, turma, inscritosNoTurno, diaDaSemana, horaInicioDaAula, horaFimDaAula, dataDaAula, salaAtribuida, lotacaoDaSala);
++            horarios.add(horario);
++        }
++        br.close();
++        return horarios;
++    }
++
++    public static void main(String[] args) throws IOException, ParseException {
++        List<Horario> test = new ArrayList<>();
++
++        test = createHorarioCSV("C:\\Users\\gmigu\\Documents\\3ano\\2sem\\ES\\src\\horario_exemplo.csv");
++        System.out.println(test);
++    }
++}
+\ No newline at end of file
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ExternalStorageConfigurationManager\" enabled=\"true\" />\r\n  <component name=\"MavenProjectsManager\">\r\n    <option name=\"originalFiles\">\r\n      <list>\r\n        <option value=\"$PROJECT_DIR$/pom.xml\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"ProjectRootManager\" version=\"2\" languageLevel=\"JDK_20\" default=\"true\" project-jdk-name=\"17\" project-jdk-type=\"JavaSDK\">\r\n    <output url=\"file://$PROJECT_DIR$/out\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+--- a/.idea/misc.xml	(revision e2fdce0e18acf5b54853d129370bfd4aac83dc78)
++++ b/.idea/misc.xml	(date 1681470655045)
+@@ -8,7 +8,7 @@
+       </list>
+     </option>
+   </component>
+-  <component name="ProjectRootManager" version="2" languageLevel="JDK_20" default="true" project-jdk-name="17" project-jdk-type="JavaSDK">
++  <component name="ProjectRootManager" version="2" languageLevel="JDK_18" project-jdk-name="openjdk-20" project-jdk-type="JavaSDK">
+     <output url="file://$PROJECT_DIR$/out" />
+   </component>
+ </project>
+\ No newline at end of file
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"5073210c-846a-4274-bc76-2e6130a4e9c5\" name=\"Changes\" comment=\"init_proj\">\r\n      <change afterPath=\"$PROJECT_DIR$/.gitignore\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/.idea/encodings.xml\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/.idea/misc.xml\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/.idea/vcs.xml\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/README\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/pom.xml\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/src/horario_exemplo.csv\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/src/main/java/Aula.java\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/src/main/java/Horario.java\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/src/main/java/Turno.java\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Class\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"2OPjVcdFrN9JAn9IatUekJt9Ebf\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\"><![CDATA[{\r\n  \"keyToString\": {\r\n    \"RunOnceActivity.OpenProjectViewOnStart\": \"true\",\r\n    \"RunOnceActivity.ShowReadmeOnStart\": \"true\",\r\n    \"SONARLINT_PRECOMMIT_ANALYSIS\": \"true\",\r\n    \"WebServerToolWindowFactoryState\": \"false\",\r\n    \"git-widget-placeholder\": \"master\",\r\n    \"ignore.virus.scanning.warn.message\": \"true\",\r\n    \"last_opened_file_path\": \"C:/Users/carlo/OneDrive - ISCTE-IUL/Escola/ISCTE 3ºANO/2ºSemestre/ES/Projeto/ES-2023-2Sem-Terca-Feira-LEI-GrupoC\",\r\n    \"node.js.detected.package.eslint\": \"true\",\r\n    \"node.js.detected.package.tslint\": \"true\",\r\n    \"node.js.selected.package.eslint\": \"(autodetect)\",\r\n    \"node.js.selected.package.tslint\": \"(autodetect)\",\r\n    \"vue.rearranger.settings.migration\": \"true\"\r\n  }\r\n}]]></component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"5073210c-846a-4274-bc76-2e6130a4e9c5\" name=\"Changes\" comment=\"\" />\r\n      <created>1681469140000</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1681469140000</updated>\r\n      <workItem from=\"1681469141889\" duration=\"1136000\" />\r\n    </task>\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"init_proj\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"init_proj\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision e2fdce0e18acf5b54853d129370bfd4aac83dc78)
++++ b/.idea/workspace.xml	(date 1681470992053)
+@@ -5,19 +5,9 @@
+   </component>
+   <component name="ChangeListManager">
+     <list default="true" id="5073210c-846a-4274-bc76-2e6130a4e9c5" name="Changes" comment="init_proj">
+-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/README" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/src/horario_exemplo.csv" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/src/main/java/Aula.java" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/src/main/java/Horario.java" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/src/main/java/Turno.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/Horario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Horario.java" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -36,6 +26,13 @@
+   </component>
+   <component name="MarkdownSettingsMigration">
+     <option name="stateVersion" value="1" />
++  </component>
++  <component name="MavenImportPreferences">
++    <option name="generalSettings">
++      <MavenGeneralSettings>
++        <option name="useMavenConfig" value="true" />
++      </MavenGeneralSettings>
++    </option>
+   </component>
+   <component name="ProjectId" id="2OPjVcdFrN9JAn9IatUekJt9Ebf" />
+   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+@@ -56,9 +53,26 @@
+     "node.js.detected.package.tslint": "true",
+     "node.js.selected.package.eslint": "(autodetect)",
+     "node.js.selected.package.tslint": "(autodetect)",
++    "project.structure.last.edited": "Project",
++    "project.structure.proportion": "0.0",
++    "project.structure.side.proportion": "0.0",
+     "vue.rearranger.settings.migration": "true"
+   }
+ }]]></component>
++  <component name="RunManager">
++    <configuration name="Horario" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
++      <option name="MAIN_CLASS_NAME" value="Horario" />
++      <module name="ES-2023-2Sem-Terca-Feira-LEI-GrupoC" />
++      <method v="2">
++        <option name="Make" enabled="true" />
++      </method>
++    </configuration>
++    <recent_temporary>
++      <list>
++        <item itemvalue="Application.Horario" />
++      </list>
++    </recent_temporary>
++  </component>
+   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+   <component name="TaskManager">
+     <task active="true" id="Default" summary="Default task">
+@@ -68,11 +82,23 @@
+       <option name="presentableId" value="Default" />
+       <updated>1681469140000</updated>
+       <workItem from="1681469141889" duration="1136000" />
++      <workItem from="1681470526705" duration="465000" />
+     </task>
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+     <option name="version" value="3" />
++  </component>
++  <component name="Vcs.Log.Tabs.Properties">
++    <option name="TAB_STATES">
++      <map>
++        <entry key="MAIN">
++          <value>
++            <State />
++          </value>
++        </entry>
++      </map>
++    </option>
+   </component>
+   <component name="VcsManagerConfiguration">
+     <MESSAGE value="init_proj" />
