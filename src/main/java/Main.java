@@ -1,25 +1,25 @@
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class Main{
     public static void main(String[] args) throws IOException {
-        String inputFile = "C:\\Users\\gmigu\\Documents\\3ano\\2sem\\ES\\src\\horario_exemplo.csv";
+        String inputFile = "src/horario_exemplo.csv";
         String outputFile = "output.json";
-
-        try {
-            BufferedReader br = new BufferedReader(new FileReader(inputFile));
+        Logger logger = Logger.getLogger(Main.class.getName());
+        try (BufferedReader br = new BufferedReader(new FileReader(inputFile))) {
             String line;
             JSONArray jsonArray = new JSONArray();
 
             boolean firstLine = true;
             while ((line = br.readLine()) != null) {
-                System.out.println(line);
+                logger.log(Level.INFO, line);
                 if (firstLine) {
                     firstLine = false;
                     continue;
@@ -42,18 +42,13 @@ public class Main{
 
                 jsonArray.put(jsonObject);
             }
+            try (FileWriter fw = new FileWriter(outputFile)) {
+                fw.write(jsonArray.toString(4));
+                fw.flush();
+            }
 
-            FileWriter fw = new FileWriter(outputFile);
-            fw.write(jsonArray.toString(4));
-            fw.flush();
-            fw.close();
-
-            System.out.println("Arquivo JSON criado com sucesso: " + outputFile);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        } catch (JSONException e) {
-            throw new RuntimeException(e);
-        } catch (NumberFormatException e) {
+            logger.log(Level.INFO, "Arquivo JSON criado com sucesso");
+        } catch (IOException | JSONException | NumberFormatException e) {
             throw new RuntimeException(e);
         }
     }
