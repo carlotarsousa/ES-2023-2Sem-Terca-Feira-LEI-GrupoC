@@ -27,20 +27,27 @@ public class Main{
 
                 String[] columns = line.split(";", -1);
 
-                JSONObject jsonObject = new JSONObject();
-                jsonObject.put("Curso", columns[0]);
-                jsonObject.put("Unidade Curricular", columns[1]);
-                jsonObject.put("Turno", columns[2]);
-                jsonObject.put("Turma", columns[3]);
-                jsonObject.put("Inscritos no turno", Integer.parseInt(columns[4]));
-                jsonObject.put("Dia da semana", columns[5]);
-                jsonObject.put("Hora início da aula", columns[6]);
-                jsonObject.put("Hora fim da aula", columns[7]);
-                jsonObject.put("Data da aula", columns[8]);
-                jsonObject.put("Sala atribuída à aula", columns[9]);
-                jsonObject.put("Lotação da sala", columns[10]);
-
-                jsonArray.put(jsonObject);
+                JSONObject sala = new JSONObject();
+                sala.put("Sala atribuída à aula", columns[9]);
+                sala.put("Lotação da sala", columns[10]);
+                JSONObject data = new JSONObject();
+                data.put("Data da aula", columns[8]);
+                data.put("Dia da semana", columns[5]);
+                data.put("Hora início da aula", columns[6]);
+                data.put("Hora fim da aula", columns[7]);
+                data.put("Sala atribuída à aula", sala);
+                JSONObject turno = new JSONObject();
+                turno.put("Turno", columns[2]);
+                turno.put("Turma", columns[3]);
+                turno.put("Inscritos no turno", Integer.parseInt(columns[4]));
+                turno.put("Data da aula", data);
+                JSONObject unidadeCurricular = new JSONObject();
+                unidadeCurricular.put("Unidade Curricular", columns[1]);
+                unidadeCurricular.put("Curso", columns[0]);
+                unidadeCurricular.put("Turno", turno);
+                JSONObject horario = new JSONObject();
+                horario.put("Unidade Curricular", unidadeCurricular);
+                jsonArray.put(horario);
             }
             try (FileWriter fw = new FileWriter(outputFile)) {
                 fw.write(jsonArray.toString(4));
