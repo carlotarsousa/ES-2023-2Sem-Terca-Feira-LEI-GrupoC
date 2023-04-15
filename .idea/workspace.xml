@@ -5,8 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5073210c-846a-4274-bc76-2e6130a4e9c5" name="Changes" comment="CSV para JSON com estrutura corrigida">
-      <change afterPath="$PROJECT_DIR$/horarios.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Functions.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/horarios.json" beforeDir="false" afterPath="$PROJECT_DIR$/horarios.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

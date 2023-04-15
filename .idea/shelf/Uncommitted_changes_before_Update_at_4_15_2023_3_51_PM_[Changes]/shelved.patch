@@ -1,0 +1,351 @@
+Index: src/main/java/Main.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import org.json.JSONArray;\r\nimport org.json.JSONException;\r\nimport org.json.JSONObject;\r\nimport java.io.BufferedReader;\r\nimport java.io.FileReader;\r\nimport java.io.FileWriter;\r\nimport java.io.IOException;\r\nimport java.util.logging.Level;\r\nimport java.util.logging.Logger;\r\n\r\npublic class Main{\r\n    public static void main(String[] args) throws IOException {\r\n        String inputFile = \"src/horario_exemplo.csv\";\r\n        String outputFile = \"output.json\";\r\n        Logger logger = Logger.getLogger(Main.class.getName());\r\n        try (BufferedReader br = new BufferedReader(new FileReader(inputFile))) {\r\n            String line;\r\n            JSONArray jsonArray = new JSONArray();\r\n\r\n            boolean firstLine = true;\r\n            while ((line = br.readLine()) != null) {\r\n                logger.log(Level.INFO, line);\r\n                if (firstLine) {\r\n                    firstLine = false;\r\n                    continue;\r\n                }\r\n\r\n                String[] columns = line.split(\";\", -1);\r\n\r\n                JSONObject sala = new JSONObject();\r\n                sala.put(\"Sala atribuída à aula\", columns[9]);\r\n                sala.put(\"Lotação da sala\", columns[10]);\r\n                JSONObject data = new JSONObject();\r\n                data.put(\"Data da aula\", columns[8]);\r\n                data.put(\"Dia da semana\", columns[5]);\r\n                data.put(\"Hora início da aula\", columns[6]);\r\n                data.put(\"Hora fim da aula\", columns[7]);\r\n                data.put(\"Sala atribuída à aula\", sala);\r\n                JSONObject turno = new JSONObject();\r\n                turno.put(\"Turno\", columns[2]);\r\n                turno.put(\"Turma\", columns[3]);\r\n                turno.put(\"Inscritos no turno\", Integer.parseInt(columns[4]));\r\n                turno.put(\"Data da aula\", data);\r\n                JSONObject unidadeCurricular = new JSONObject();\r\n                unidadeCurricular.put(\"Unidade Curricular\", columns[1]);\r\n                unidadeCurricular.put(\"Curso\", columns[0]);\r\n                unidadeCurricular.put(\"Turno\", turno);\r\n                JSONObject horario = new JSONObject();\r\n                horario.put(\"Unidade Curricular\", unidadeCurricular);\r\n                jsonArray.put(horario);\r\n            }\r\n            try (FileWriter fw = new FileWriter(outputFile)) {\r\n                fw.write(jsonArray.toString(4));\r\n                fw.flush();\r\n            }\r\n\r\n            logger.log(Level.INFO, \"Arquivo JSON criado com sucesso\");\r\n        } catch (IOException | JSONException | NumberFormatException e) {\r\n            throw new RuntimeException(e);\r\n        }\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/Main.java b/src/main/java/Main.java
+--- a/src/main/java/Main.java	(revision d04778590b5a00eddf858de981ca0640fdfa7721)
++++ b/src/main/java/Main.java	(date 1681568422934)
+@@ -1,62 +1,8 @@
+-import org.json.JSONArray;
+-import org.json.JSONException;
+-import org.json.JSONObject;
+-import java.io.BufferedReader;
+-import java.io.FileReader;
+-import java.io.FileWriter;
+ import java.io.IOException;
+-import java.util.logging.Level;
+-import java.util.logging.Logger;
+ 
+ public class Main{
+     public static void main(String[] args) throws IOException {
+-        String inputFile = "src/horario_exemplo.csv";
+-        String outputFile = "output.json";
+-        Logger logger = Logger.getLogger(Main.class.getName());
+-        try (BufferedReader br = new BufferedReader(new FileReader(inputFile))) {
+-            String line;
+-            JSONArray jsonArray = new JSONArray();
+-
+-            boolean firstLine = true;
+-            while ((line = br.readLine()) != null) {
+-                logger.log(Level.INFO, line);
+-                if (firstLine) {
+-                    firstLine = false;
+-                    continue;
+-                }
+-
+-                String[] columns = line.split(";", -1);
+-
+-                JSONObject sala = new JSONObject();
+-                sala.put("Sala atribuída à aula", columns[9]);
+-                sala.put("Lotação da sala", columns[10]);
+-                JSONObject data = new JSONObject();
+-                data.put("Data da aula", columns[8]);
+-                data.put("Dia da semana", columns[5]);
+-                data.put("Hora início da aula", columns[6]);
+-                data.put("Hora fim da aula", columns[7]);
+-                data.put("Sala atribuída à aula", sala);
+-                JSONObject turno = new JSONObject();
+-                turno.put("Turno", columns[2]);
+-                turno.put("Turma", columns[3]);
+-                turno.put("Inscritos no turno", Integer.parseInt(columns[4]));
+-                turno.put("Data da aula", data);
+-                JSONObject unidadeCurricular = new JSONObject();
+-                unidadeCurricular.put("Unidade Curricular", columns[1]);
+-                unidadeCurricular.put("Curso", columns[0]);
+-                unidadeCurricular.put("Turno", turno);
+-                JSONObject horario = new JSONObject();
+-                horario.put("Unidade Curricular", unidadeCurricular);
+-                jsonArray.put(horario);
+-            }
+-            try (FileWriter fw = new FileWriter(outputFile)) {
+-                fw.write(jsonArray.toString(4));
+-                fw.flush();
+-            }
+-
+-            logger.log(Level.INFO, "Arquivo JSON criado com sucesso");
+-        } catch (IOException | JSONException | NumberFormatException e) {
+-            throw new RuntimeException(e);
+-        }
++//        Functions.csvToJSON();
++        Functions.JSONTocsv();
+     }
+ }
+Index: pom.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project xmlns=\"http://maven.apache.org/POM/4.0.0\"\r\n         xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"\r\n         xsi:schemaLocation=\"http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd\">\r\n    <modelVersion>4.0.0</modelVersion>\r\n\r\n    <groupId>org.example</groupId>\r\n    <artifactId>ES-2023-2Sem-Terca-Feira-LEI-GrupoC</artifactId>\r\n    <version>1.0-SNAPSHOT</version>\r\n\r\n    <properties>\r\n        <maven.compiler.source>20</maven.compiler.source>\r\n        <maven.compiler.target>20</maven.compiler.target>\r\n        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>\r\n    </properties>\r\n    <dependencies>\r\n        <dependency>\r\n            <groupId>org.junit.jupiter</groupId>\r\n            <artifactId>junit-jupiter</artifactId>\r\n            <version>5.9.2</version>\r\n        </dependency>\r\n    </dependencies>\r\n\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/pom.xml b/pom.xml
+--- a/pom.xml	(revision d04778590b5a00eddf858de981ca0640fdfa7721)
++++ b/pom.xml	(date 1681567968820)
+@@ -19,6 +19,11 @@
+             <artifactId>junit-jupiter</artifactId>
+             <version>5.9.2</version>
+         </dependency>
++        <dependency>
++            <groupId>commons-io</groupId>
++            <artifactId>commons-io</artifactId>
++            <version>1.4</version>
++        </dependency>
+     </dependencies>
+ 
+ </project>
+\ No newline at end of file
+Index: src/main/java/Functions.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/Functions.java b/src/main/java/Functions.java
+new file mode 100644
+--- /dev/null	(date 1681568422940)
++++ b/src/main/java/Functions.java	(date 1681568422940)
+@@ -0,0 +1,81 @@
++import org.json.JSONArray;
++import org.json.JSONException;
++import org.json.JSONObject;
++import org.json.CDL;
++import org.apache.commons.io.FileUtils;
++
++import java.io.*;
++import java.nio.file.Files;
++import java.nio.file.Paths;
++import java.util.logging.Level;
++import java.util.logging.Logger;
++
++public class Functions {
++
++    public static void csvToJSON() {
++        String inputFile = "src/horario_exemplo.csv";
++        String outputFile = "output.json";
++        Logger logger = Logger.getLogger(Main.class.getName());
++        try (BufferedReader br = new BufferedReader(new FileReader(inputFile))) {
++            String line;
++            JSONArray jsonArray = new JSONArray();
++
++            boolean firstLine = true;
++            while ((line = br.readLine()) != null) {
++                logger.log(Level.INFO, line);
++                if (firstLine) {
++                    firstLine = false;
++                    continue;
++                }
++
++                String[] columns = line.split(";", -1);
++
++                JSONObject sala = new JSONObject();
++                sala.put("Sala atribuída à aula", columns[9]);
++                sala.put("Lotação da sala", columns[10]);
++                JSONObject data = new JSONObject();
++                data.put("Data da aula", columns[8]);
++                data.put("Dia da semana", columns[5]);
++                data.put("Hora início da aula", columns[6]);
++                data.put("Hora fim da aula", columns[7]);
++                data.put("Sala atribuída à aula", sala);
++                JSONObject turno = new JSONObject();
++                turno.put("Turno", columns[2]);
++                turno.put("Turma", columns[3]);
++                turno.put("Inscritos no turno", Integer.parseInt(columns[4]));
++                turno.put("Data da aula", data);
++                JSONObject unidadeCurricular = new JSONObject();
++                unidadeCurricular.put("Unidade Curricular", columns[1]);
++                unidadeCurricular.put("Curso", columns[0]);
++                unidadeCurricular.put("Turno", turno);
++                JSONObject horario = new JSONObject();
++                horario.put("Unidade Curricular", unidadeCurricular);
++                jsonArray.put(horario);
++            }
++            try (FileWriter fw = new FileWriter(outputFile)) {
++                fw.write(jsonArray.toString(4));
++                fw.flush();
++            }
++
++            logger.log(Level.INFO, "Arquivo JSON criado com sucesso");
++        } catch (IOException | JSONException | NumberFormatException e) {
++            throw new RuntimeException(e);
++        }
++    }
++
++    public static void JSONTocsv() {
++        String jsonString;
++        JSONObject jsonObject;
++        try {
++            jsonString = new String(Files.readAllBytes(Paths.get("output.json")));
++            jsonObject = new JSONObject(jsonString);
++            JSONArray docs = jsonObject.getJSONArray("horario");
++            File file = new File("output.csv");
++            String csvString = CDL.toString(docs);
++            FileUtils.writeStringToFile(file, csvString);
++        }
++        catch (Exception e) {
++            e.printStackTrace();
++        }
++    }
++}
+Index: .idea/sonarlint/securityhotspotstore/index.pb
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>\n6\n\u0006README\u0012,6\\9\\69e27356ef629022720d868ab0c0e3394775b6c1\nG\n\u0017src/horario_exemplo.csv\u0012,7\\7\\77922fd29c5f9cffec74a9e6c0c1e36d5da66290\n:\n\n.gitignore\u0012,a\\5\\a5cc2925ca8258af241be7e5b0381edf30266302
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/sonarlint/securityhotspotstore/index.pb b/.idea/sonarlint/securityhotspotstore/index.pb
+--- a/.idea/sonarlint/securityhotspotstore/index.pb	(revision d04778590b5a00eddf858de981ca0640fdfa7721)
++++ b/.idea/sonarlint/securityhotspotstore/index.pb	(date 1681570152955)
+@@ -5,4 +5,26 @@
+ src/horario_exemplo.csv,7\7\77922fd29c5f9cffec74a9e6c0c1e36d5da66290
+ :
+ 
+-.gitignore,a\5\a5cc2925ca8258af241be7e5b0381edf30266302
+\ No newline at end of file
++.gitignore,a\5\a5cc2925ca8258af241be7e5b0381edf30266302
++]
++-.idea/sonarlint/securityhotspotstore/index.pb,8\8\88a9255124c95bdc913197c120a8d560edc59c8e
++S
++#.idea/sonarlint/issuestore/index.pb,9\f\9fe84ebb15faf917b7def6236dba604453cc61e0
++�
++Q.idea/sonarlint/securityhotspotstore/7/7/77922fd29c5f9cffec74a9e6c0c1e36d5da66290,9\2\9238f390a26a401e439d02007fbaea676ac0cba3
++�
++Q.idea/sonarlint/securityhotspotstore/6/9/69e27356ef629022720d868ab0c0e3394775b6c1,8\6\8682553173bb0eb1aa78a106e49cb98a1fb02079
++w
++G.idea/sonarlint/issuestore/a/5/a5cc2925ca8258af241be7e5b0381edf30266302,e\d\ed67eb178d523a4b3f117dcbe0eda5196367ceec
++�
++Q.idea/sonarlint/securityhotspotstore/a/5/a5cc2925ca8258af241be7e5b0381edf30266302,3\0\30205a209c6ce77c4cfc19a09e6f57c588b7fb88
++�
++Q.idea/shelf/Uncommitted_changes_before_Update_at_4_14_2023_12_16_PM__Changes_.xml,8\2\828077579f4e92baf3401ce84cfd9b34b428be90
++�
++Z.idea/shelf/Uncommitted_changes_before_Update_at_4_14_2023_2_09_PM_[Changes]/shelved.patch,f\5\f54b6d312e8df0f6e5cbbc02feb3da498620ee07
++w
++G.idea/sonarlint/issuestore/6/9/69e27356ef629022720d868ab0c0e3394775b6c1,a\3\a36c54c6ea0de9a87c9d964195ef56b7f89e3392
++�
++P.idea/shelf/Uncommitted_changes_before_Update_at_4_14_2023_2_09_PM__Changes_.xml,5\b\5b295da528e98334516b35cbeac764c6b1e40190
++w
++G.idea/sonarlint/issuestore/7/7/77922fd29c5f9cffec74a9e6c0c1e36d5da66290,3\c\3cd31ea3ff538c6f2e9f8d0b4ab9c34321136c05
+\ No newline at end of file
+Index: .idea/sonarlint/issuestore/index.pb
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>\n6\n\u0006README\u0012,6\\9\\69e27356ef629022720d868ab0c0e3394775b6c1\nG\n\u0017src/horario_exemplo.csv\u0012,7\\7\\77922fd29c5f9cffec74a9e6c0c1e36d5da66290\n:\n\n.gitignore\u0012,a\\5\\a5cc2925ca8258af241be7e5b0381edf30266302
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/sonarlint/issuestore/index.pb b/.idea/sonarlint/issuestore/index.pb
+--- a/.idea/sonarlint/issuestore/index.pb	(revision d04778590b5a00eddf858de981ca0640fdfa7721)
++++ b/.idea/sonarlint/issuestore/index.pb	(date 1681570152950)
+@@ -5,4 +5,26 @@
+ src/horario_exemplo.csv,7\7\77922fd29c5f9cffec74a9e6c0c1e36d5da66290
+ :
+ 
+-.gitignore,a\5\a5cc2925ca8258af241be7e5b0381edf30266302
+\ No newline at end of file
++.gitignore,a\5\a5cc2925ca8258af241be7e5b0381edf30266302
++]
++-.idea/sonarlint/securityhotspotstore/index.pb,8\8\88a9255124c95bdc913197c120a8d560edc59c8e
++S
++#.idea/sonarlint/issuestore/index.pb,9\f\9fe84ebb15faf917b7def6236dba604453cc61e0
++�
++Q.idea/sonarlint/securityhotspotstore/7/7/77922fd29c5f9cffec74a9e6c0c1e36d5da66290,9\2\9238f390a26a401e439d02007fbaea676ac0cba3
++�
++Q.idea/sonarlint/securityhotspotstore/6/9/69e27356ef629022720d868ab0c0e3394775b6c1,8\6\8682553173bb0eb1aa78a106e49cb98a1fb02079
++w
++G.idea/sonarlint/issuestore/a/5/a5cc2925ca8258af241be7e5b0381edf30266302,e\d\ed67eb178d523a4b3f117dcbe0eda5196367ceec
++�
++Q.idea/sonarlint/securityhotspotstore/a/5/a5cc2925ca8258af241be7e5b0381edf30266302,3\0\30205a209c6ce77c4cfc19a09e6f57c588b7fb88
++�
++Q.idea/shelf/Uncommitted_changes_before_Update_at_4_14_2023_12_16_PM__Changes_.xml,8\2\828077579f4e92baf3401ce84cfd9b34b428be90
++�
++Z.idea/shelf/Uncommitted_changes_before_Update_at_4_14_2023_2_09_PM_[Changes]/shelved.patch,f\5\f54b6d312e8df0f6e5cbbc02feb3da498620ee07
++w
++G.idea/sonarlint/issuestore/6/9/69e27356ef629022720d868ab0c0e3394775b6c1,a\3\a36c54c6ea0de9a87c9d964195ef56b7f89e3392
++�
++P.idea/shelf/Uncommitted_changes_before_Update_at_4_14_2023_2_09_PM__Changes_.xml,5\b\5b295da528e98334516b35cbeac764c6b1e40190
++w
++G.idea/sonarlint/issuestore/7/7/77922fd29c5f9cffec74a9e6c0c1e36d5da66290,3\c\3cd31ea3ff538c6f2e9f8d0b4ab9c34321136c05
+\ No newline at end of file
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"5073210c-846a-4274-bc76-2e6130a4e9c5\" name=\"Changes\" comment=\"JUnit5\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_14_2023_2_09_PM__Changes_.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_14_2023_2_09_PM__Changes_.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/output.json\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/output.json\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/Main.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/Main.java\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Class\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"2OPjVcdFrN9JAn9IatUekJt9Ebf\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\">\r\n    <ConfirmationsSetting value=\"2\" id=\"Add\" />\r\n  </component>\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">{\r\n  &quot;keyToString&quot;: {\r\n    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,\r\n    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,\r\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\r\n    &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;true&quot;,\r\n    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,\r\n    &quot;git-widget-placeholder&quot;: &quot;master&quot;,\r\n    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,\r\n    &quot;last_opened_file_path&quot;: &quot;C:/Users/carlo/OneDrive/Desktop/json-20230227.jar&quot;,\r\n    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,\r\n    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,\r\n    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,\r\n    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,\r\n    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,\r\n    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,\r\n    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,\r\n    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;,\r\n    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;\r\n  }\r\n}</component>\r\n  <component name=\"RunManager\" selected=\"Application.Main\">\r\n    <configuration name=\"Horario\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"Horario\" />\r\n      <module name=\"ES-2023-2Sem-Terca-Feira-LEI-GrupoC\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"Main\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"Main\" />\r\n      <module name=\"ES-2023-2Sem-Terca-Feira-LEI-GrupoC\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <recent_temporary>\r\n      <list>\r\n        <item itemvalue=\"Application.Main\" />\r\n        <item itemvalue=\"Application.Horario\" />\r\n      </list>\r\n    </recent_temporary>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"5073210c-846a-4274-bc76-2e6130a4e9c5\" name=\"Changes\" comment=\"\" />\r\n      <created>1681469140000</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1681469140000</updated>\r\n      <workItem from=\"1681469141889\" duration=\"1800000\" />\r\n      <workItem from=\"1681558403482\" duration=\"3062000\" />\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"init_proj\">\r\n      <created>1681470389810</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1681470389810</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"CSV para JSON sem estrutura\">\r\n      <created>1681477533280</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1681477533280</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"3\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <option name=\"ADD_EXTERNAL_FILES_SILENTLY\" value=\"true\" />\r\n    <MESSAGE value=\"init_proj\" />\r\n    <MESSAGE value=\"CSV para JSON sem estrutura\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"CSV para JSON sem estrutura\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision d04778590b5a00eddf858de981ca0640fdfa7721)
++++ b/.idea/workspace.xml	(date 1681569095108)
+@@ -4,10 +4,12 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="5073210c-846a-4274-bc76-2e6130a4e9c5" name="Changes" comment="JUnit5">
+-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_14_2023_2_09_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_14_2023_2_09_PM__Changes_.xml" afterDir="false" />
++    <list default="true" id="5073210c-846a-4274-bc76-2e6130a4e9c5" name="Changes" comment="code smells">
++      <change afterPath="$PROJECT_DIR$/src/main/java/Functions.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/output.json" beforeDir="false" afterPath="$PROJECT_DIR$/output.json" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+@@ -36,27 +38,27 @@
+     <option name="hideEmptyMiddlePackages" value="true" />
+     <option name="showLibraryContents" value="true" />
+   </component>
+-  <component name="PropertiesComponent">{
+-  &quot;keyToString&quot;: {
+-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+-    &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;true&quot;,
+-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+-    &quot;last_opened_file_path&quot;: &quot;C:/Users/carlo/OneDrive/Desktop/json-20230227.jar&quot;,
+-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+-    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;,
+-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
++  <component name="PropertiesComponent"><![CDATA[{
++  "keyToString": {
++    "ASKED_ADD_EXTERNAL_FILES": "true",
++    "RunOnceActivity.OpenProjectViewOnStart": "true",
++    "RunOnceActivity.ShowReadmeOnStart": "true",
++    "SONARLINT_PRECOMMIT_ANALYSIS": "true",
++    "WebServerToolWindowFactoryState": "false",
++    "git-widget-placeholder": "master",
++    "ignore.virus.scanning.warn.message": "true",
++    "last_opened_file_path": "C:/Users/carlo/OneDrive - ISCTE-IUL/Escola/ISCTE 3ºANO/2ºSemestre/ES/Projeto/json-20230227.jar",
++    "node.js.detected.package.eslint": "true",
++    "node.js.detected.package.tslint": "true",
++    "node.js.selected.package.eslint": "(autodetect)",
++    "node.js.selected.package.tslint": "(autodetect)",
++    "project.structure.last.edited": "Problems",
++    "project.structure.proportion": "0.15",
++    "project.structure.side.proportion": "0.2",
++    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices",
++    "vue.rearranger.settings.migration": "true"
+   }
+-}</component>
++}]]></component>
+   <component name="RunManager" selected="Application.Main">
+     <configuration name="Horario" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+       <option name="MAIN_CLASS_NAME" value="Horario" />
+@@ -89,6 +91,7 @@
+       <updated>1681469140000</updated>
+       <workItem from="1681469141889" duration="1800000" />
+       <workItem from="1681558403482" duration="3062000" />
++      <workItem from="1681567710392" duration="1378000" />
+     </task>
+     <task id="LOCAL-00001" summary="init_proj">
+       <created>1681470389810</created>
