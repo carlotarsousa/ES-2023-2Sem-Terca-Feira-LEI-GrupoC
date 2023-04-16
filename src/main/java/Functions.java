@@ -5,6 +5,9 @@ import org.json.CDL;
 import org.apache.commons.io.FileUtils;
 
 import java.io.*;
+import java.net.MalformedURLException;
+import java.net.URI;
+import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.logging.Level;
@@ -16,11 +19,9 @@ public class Functions {
         throw new IllegalStateException("Aux Functions");
     }
 
-    public static void csvToJSON() throws FileNotFoundException {
-        String inputFile = "src/horario_exemplo.csv";
-        String outputFile = "horarios.json";
+    public static void csvToJSON(String loadFilePath, String saveFilePath) throws FileNotFoundException {
         Logger logger = Logger.getLogger(Main.class.getName());
-        try (BufferedReader br = new BufferedReader(new FileReader(inputFile))) {
+        try (BufferedReader br = loadFile(loadFilePath)) {
             String line;
             JSONArray jsonArray = new JSONArray();
             boolean firstLine = true;
@@ -55,9 +56,12 @@ public class Functions {
                 horario.put("Unidade Curricular", unidadeCurricular);
                 jsonArray.put(horario);
             }
-            try (FileWriter fw = new FileWriter(outputFile)) {
-                fw.write(jsonArray.toString(4));
-                fw.flush();
+
+            try (BufferedWriter bw = saveFile(saveFilePath)) {
+                if(bw != null) {
+                    bw.write(jsonArray.toString(4));
+                    bw.close();
+                }
             }
 
             logger.log(Level.INFO, "Arquivo JSON criado com sucesso");
@@ -117,5 +121,23 @@ public class Functions {
         } catch (IOException | JSONException e) {
             e.printStackTrace();
         }
+    }
+    private static BufferedReader loadFile(String filePath) {
+        try {
+            URL url = new URL(filePath);
+            return new BufferedReader(new InputStreamReader(url.openStream()));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+    private static BufferedWriter saveFile(String filePath) {
+        try {
+            URL url = new URL(filePath);
+            return new BufferedWriter(new OutputStreamWriter(url.openConnection().getOutputStream()));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 }
