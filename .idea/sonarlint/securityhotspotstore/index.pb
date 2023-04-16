@@ -1,9 +1,4 @@
 
-Ä
-P.idea/shelf/Uncommitted_changes_before_Update_at_4_15_2023_2_28_PM__Changes_.xml,7\6\76ce98f681f9b77f64bf87b962a970da2f59f3c2
-Ä
-P.idea/shelf/Uncommitted_changes_before_Update_at_4_15_2023_3_51_PM__Changes_.xml,6\b\6be43f4c5d8deaa72c01af7e2f920d3bdcbc4a01
-Ä
-P.idea/shelf/Uncommitted_changes_before_Update_at_4_14_2023_2_09_PM__Changes_.xml,5\b\5b295da528e98334516b35cbeac764c6b1e40190
-Å
-Q.idea/shelf/Uncommitted_changes_before_Update_at_4_14_2023_12_16_PM__Changes_.xml,8\2\828077579f4e92baf3401ce84cfd9b34b428be90
+:
+
+.gitignore,a\5\a5cc2925ca8258af241be7e5b0381edf30266302

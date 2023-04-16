@@ -22,7 +22,8 @@ public class Functions {
         throw new IllegalStateException("Aux Functions");
     }
 
-    public static void csvToJSON(String loadFilePath, String saveFilePath) throws FileNotFoundException {
+    //Função para converter de CSV para JSON
+    public static void convertCSVtoJSON(String loadFilePath, String saveFilePath) throws FileNotFoundException {
         Logger logger = Logger.getLogger(Main.class.getName());
         try (BufferedReader br = loadFile(loadFilePath)) {
             if(br != null){
@@ -80,13 +81,13 @@ public class Functions {
     }
 
     //Função para converter de JSON para CSV
-    public static void convertJsonToCsv(String jsonFilePath, String csvFilePath) {
+    public static void convertJSONtoCSV(String jsonFilePath, String csvFilePath) {
         Logger logger = Logger.getLogger(Main.class.getName());
         try {
             Path path = Paths.get(jsonFilePath);
             String jsonContent = new String(Files.readAllBytes(path));
             JSONArray jsonArray = new JSONArray(jsonContent);
-            try (FileWriter csvWriter = new FileWriter(csvFilePath)){
+            try (FileWriter csvWriter = new FileWriter(csvFilePath)) {
                 csvWriter.append("Curso;Unidade Curricular;Turno;Turma;Inscritos no turno;Dia da semana;Hora início da aula;Hora fim da aula;Data da aula;Sala atribuída à aula;Lotação da sala\n");
                 for (int i = 0; i < jsonArray.length(); i++) {
                     JSONObject jsonObject = jsonArray.getJSONObject(i).getJSONObject(UC);

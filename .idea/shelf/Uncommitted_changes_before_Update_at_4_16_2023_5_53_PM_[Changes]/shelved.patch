@@ -1,0 +1,383 @@
+Index: .idea/sonarlint/securityhotspotstore/index.pb
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>\n�\u0001\nP.idea/shelf/Uncommitted_changes_before_Update_at_4_15_2023_2_28_PM__Changes_.xml\u0012,7\\6\\76ce98f681f9b77f64bf87b962a970da2f59f3c2\n�\u0001\nP.idea/shelf/Uncommitted_changes_before_Update_at_4_15_2023_3_51_PM__Changes_.xml\u0012,6\\b\\6be43f4c5d8deaa72c01af7e2f920d3bdcbc4a01\n�\u0001\nP.idea/shelf/Uncommitted_changes_before_Update_at_4_14_2023_2_09_PM__Changes_.xml\u0012,5\\b\\5b295da528e98334516b35cbeac764c6b1e40190\n�\u0001\nQ.idea/shelf/Uncommitted_changes_before_Update_at_4_14_2023_12_16_PM__Changes_.xml\u0012,8\\2\\828077579f4e92baf3401ce84cfd9b34b428be90
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/sonarlint/securityhotspotstore/index.pb b/.idea/sonarlint/securityhotspotstore/index.pb
+--- a/.idea/sonarlint/securityhotspotstore/index.pb	(revision 0f05e140b63b043a2529e8ffabf300b4256137f4)
++++ b/.idea/sonarlint/securityhotspotstore/index.pb	(date 1681663092128)
+@@ -6,4 +6,138 @@
+ �
+ P.idea/shelf/Uncommitted_changes_before_Update_at_4_14_2023_2_09_PM__Changes_.xml,5\b\5b295da528e98334516b35cbeac764c6b1e40190
+ �
+-Q.idea/shelf/Uncommitted_changes_before_Update_at_4_14_2023_12_16_PM__Changes_.xml,8\2\828077579f4e92baf3401ce84cfd9b34b428be90
+\ No newline at end of file
++Q.idea/shelf/Uncommitted_changes_before_Update_at_4_14_2023_12_16_PM__Changes_.xml,8\2\828077579f4e92baf3401ce84cfd9b34b428be90
++�
++Q.idea/sonarlint/securityhotspotstore/9/0/909762385fc6eb20f922a91c6865741308b57f2c,e\0\e0ea4108d198a3d2e4e87c48063db9d2bffad652
++�
++Q.idea/sonarlint/securityhotspotstore/9/a/9a43762646d6c9d33ccdc2a92292c8078d1078f0,5\6\5638eca1288f3c9951eed1818124cbc4e2ba7f42
++w
++G.idea/sonarlint/issuestore/3/d/3de59755adc732c89bab1e2d6756d1bde4d8cafb,a\f\aff74e5f3b1d2a28200fc0cb4f77f987a11ce5aa
++�
++P.idea/shelf/Uncommitted_changes_before_Update_at_4_16_2023_3_47_PM__Changes_.xml,1\a\1af4202e5e940db94f8bba61cc5b7bdcc4b2ef19
++w
++G.idea/sonarlint/issuestore/7/6/76ce98f681f9b77f64bf87b962a970da2f59f3c2,8\7\876b25f216b6a7de98fbd9d7893bc0a6a453a97c
++w
++G.idea/sonarlint/issuestore/3/e/3ed597bbc914dcdbcad89ee9731ed7919cd49e27,2\3\23a30ad90b7d1e66cfd69712571191518751baf3
++�
++Q.idea/sonarlint/securityhotspotstore/7/7/77922fd29c5f9cffec74a9e6c0c1e36d5da66290,9\2\9238f390a26a401e439d02007fbaea676ac0cba3
++w
++G.idea/sonarlint/issuestore/f/0/f0e0f9cec86fe4b939ae22be5264c758801eb28f,5\0\50e216b4439d2538168c3ddca9c0c2fe23bd1c02
++w
++G.idea/sonarlint/issuestore/f/f/ff93a5dfc341d7a6c4d0a986f88b1cc52351083b,c\4\c46a493f95fd939f139ce1dc0a446e768bfbfd04
++w
++G.idea/sonarlint/issuestore/f/d/fdfe500f80fea99526c9a3a08e8fe0365be2a5e3,6\3\63a27c1017ac9b71ca123bd5ebc8d9f6c41ffb52
++w
++G.idea/sonarlint/issuestore/e/d/ed6ff41fef3c4ef40fccc3198c3bae0663c295c0,9\d\9d57ceee1887f3eddb8319d82c75105b09c04904
++w
++G.idea/sonarlint/issuestore/7/7/77922fd29c5f9cffec74a9e6c0c1e36d5da66290,3\c\3cd31ea3ff538c6f2e9f8d0b4ab9c34321136c05
++�
++Q.idea/sonarlint/securityhotspotstore/4/4/442292b8a7efeabbe4cc176709b833b1792140ec,2\c\2cabb939da04d3de3a200bf2b575690e1a16316d
++�
++Q.idea/sonarlint/securityhotspotstore/b/4/b4310661d42e77e00abb8de82a658ce6c3d0ba62,2\2\226dccb3e32fca8d780b79abf553a24bcae41e07
++�
++Q.idea/sonarlint/securityhotspotstore/b/b/bbf202272a96de5cd6b6828ffdc55fb3ce45289c,4\8\4863281891d32ef796d6f680d78cb100e7c940be
++�
++Z.idea/shelf/Uncommitted_changes_before_Update_at_4_16_2023_3_47_PM_[Changes]/shelved.patch,9\a\9acd039cc5af2a31051f2ef06567647297b65057
++�
++Q.idea/sonarlint/securityhotspotstore/0/0/0017a53952a5b74ce5650e5d2da4f060a3c1d474,a\2\a20262e564b9b9f029145f80b879f718c570c690
++�
++Q.idea/sonarlint/securityhotspotstore/1/f/1f636f5bf62a58060f5d229644bfec219d93f5fb,3\c\3cb222f0e7290641697e047824792180f318d679
++�
++Q.idea/sonarlint/securityhotspotstore/2/c/2c5cb700c88aa343665696ccf5edb3c11c291d4e,e\0\e0fbe87a90d2e0fd2b8b40992fd8ca89358502b7
++�
++Q.idea/sonarlint/securityhotspotstore/7/6/76ce98f681f9b77f64bf87b962a970da2f59f3c2,5\e\5eebe54866f6bf9461d97620eb8e52bfdb5989a6
++w
++G.idea/sonarlint/issuestore/5/3/53dba0041108e5f77753d10a251a48c3d20ecad3,1\8\18340a0526a92f64a9227c4ae89cc0e5ec99794b
++w
++G.idea/sonarlint/issuestore/5/9/5983ea801abf0daa4d5e05f06e5a4859efd3fa3b,9\7\974597921d46903b2830ea22c2d48544d43c4410
++�
++Q.idea/sonarlint/securityhotspotstore/3/d/3de59755adc732c89bab1e2d6756d1bde4d8cafb,7\0\7015eedbdfa70c67bce5c29f2376bf898fe2c13c
++�
++Q.idea/sonarlint/securityhotspotstore/3/e/3ed597bbc914dcdbcad89ee9731ed7919cd49e27,2\8\28c5840e3f9fce953052da11a1858415f58b59cd
++�
++Q.idea/sonarlint/securityhotspotstore/a/1/a1f6b2cedf0a16b012f8f2450fd7723447a9cf54,3\e\3eabb5cfe0a4296569c4c141dfa72432342949e4
++�
++Q.idea/sonarlint/securityhotspotstore/a/1/a1d200ab594ed2cc9c5a0bcb5ae2c79cd8523885,2\3\23a712b4b4f0ca06e1d8914391b0a740392cb063
++�
++Q.idea/sonarlint/securityhotspotstore/a/e/ae9ddf453f55affea2d6b9e3973cac1eb2efb4e1,e\3\e36d3b35b0aa033dfcf067b2cd16117a306b1e80
++�
++Q.idea/sonarlint/securityhotspotstore/a/d/ad89c2c590c35251cf0921759eb97eea62490ee3,1\0\10fdc2995ac15c48ba80504f3af14d195d96b1d8
++w
++G.idea/sonarlint/issuestore/a/e/ae9ddf453f55affea2d6b9e3973cac1eb2efb4e1,6\2\6248197ca7a44d8bc42b5bd6cd80cd6e99143261
++�
++Q.idea/sonarlint/securityhotspotstore/a/e/aeb9fc6c0fabd3bf33aa03581b9c9f03000330c9,4\3\43e45203438088c7d4a7cafdd527e94205c2c169
++w
++G.idea/sonarlint/issuestore/8/3/83c97b69f1983e71cd804a5894ec167e14452d2c,8\0\803c41fb12a3cab769ec66c457d175aa6bdf5b0c
++w
++G.idea/sonarlint/issuestore/8/a/8a6dae537be9f47878c6964c6ee40cab0ca75e28,8\e\8e3d5572111947a6fc62da316a319faf3e927047
++w
++G.idea/sonarlint/issuestore/a/d/ad89c2c590c35251cf0921759eb97eea62490ee3,6\b\6b198d4b1a08ec726a12cf433331e18a95e2d9bc
++�
++Q.idea/sonarlint/securityhotspotstore/5/9/5983ea801abf0daa4d5e05f06e5a4859efd3fa3b,1\5\150240a8cb8071d1192e02e678ba78f4bea95433
++w
++G.idea/sonarlint/issuestore/a/1/a1f6b2cedf0a16b012f8f2450fd7723447a9cf54,a\c\ac2493af7a27428ee3675958a0019389f2929ecb
++�
++Q.idea/sonarlint/securityhotspotstore/5/3/53dba0041108e5f77753d10a251a48c3d20ecad3,6\a\6a51debefff1931f20ad1d6a913abb9afc2b518d
++�
++Q.idea/sonarlint/securityhotspotstore/8/6/86eb87633dc878b76b167925af6d69b954bf5758,c\a\ca7d0e890d166f7934f87b58b0b63ed078f938e5
++w
++G.idea/sonarlint/issuestore/8/6/86eb87633dc878b76b167925af6d69b954bf5758,0\b\0bb62dfedefd8d91e3f4122bcb811889ad1283c7
++w
++G.idea/sonarlint/issuestore/a/1/a1d200ab594ed2cc9c5a0bcb5ae2c79cd8523885,b\f\bf8c2bfb306b0a893d4de2d9ff4ba3975a02e2b8
++w
++G.idea/sonarlint/issuestore/6/7/67eaf978e530588b1f14f51aeca296c2b659e272,8\4\841fc93efe1e898ee0d3be72d3e3c86e538e94b8
++w
++G.idea/sonarlint/issuestore/6/b/6be43f4c5d8deaa72c01af7e2f920d3bdcbc4a01,8\c\8cb032c73c987e922f9c17e95865b79fffa28d35
++w
++G.idea/sonarlint/issuestore/1/f/1f636f5bf62a58060f5d229644bfec219d93f5fb,2\c\2cf28acea12649bb250b77e0fe29e0db0e31d26c
++�
++Q.idea/sonarlint/securityhotspotstore/6/7/67eaf978e530588b1f14f51aeca296c2b659e272,3\1\31c845172c50fd6cd68741f1ca4248d96436f9df
++�
++Q.idea/sonarlint/securityhotspotstore/6/b/6be43f4c5d8deaa72c01af7e2f920d3bdcbc4a01,9\0\90a02d61713400f263f4fe80a30b14a329d15c57
++�
++Z.idea/shelf/Uncommitted_changes_before_Update_at_4_15_2023_4_43_PM_[Changes]/shelved.patch,8\5\85de95ffe3b1dd6425c3feacc2fb348a83fe8668
++w
++G.idea/sonarlint/issuestore/a/e/aeb9fc6c0fabd3bf33aa03581b9c9f03000330c9,4\7\4770f2f69df5870994862b599381c92da8aff68b
++w
++G.idea/sonarlint/issuestore/0/0/0017a53952a5b74ce5650e5d2da4f060a3c1d474,4\d\4d88ae87d579fa106180a26bc4a113bbd80f8933
++�
++P.idea/shelf/Uncommitted_changes_before_Update_at_4_15_2023_4_43_PM__Changes_.xml,0\d\0db29ba2ba2c6b4083828ebe60f1ea6e29477dbb
++w
++G.idea/sonarlint/issuestore/4/4/442292b8a7efeabbe4cc176709b833b1792140ec,8\6\863e0292fd7e9b3e74dafd6cc01f73ba76346482
++w
++G.idea/sonarlint/issuestore/b/4/b4310661d42e77e00abb8de82a658ce6c3d0ba62,b\a\ba9a47b4bbb30016a17b2b448196454f4c3e09ef
++w
++G.idea/sonarlint/issuestore/b/b/bbf202272a96de5cd6b6828ffdc55fb3ce45289c,8\4\84e95bd0ea795e5307464eb72e7bd95d9f673c00
++�
++P.idea/shelf/Uncommitted_changes_before_Update_at_4_16_2023_4_52_PM__Changes_.xml,5\f\5f54e8802477674ccfb671a12780a115a995b3ff
++�
++Z.idea/shelf/Uncommitted_changes_before_Update_at_4_16_2023_4_52_PM_[Changes]/shelved.patch,4\7\47f2bf1e1d4654b379971cab70ada0a1582bd326
++�
++Q.idea/sonarlint/securityhotspotstore/f/f/ff93a5dfc341d7a6c4d0a986f88b1cc52351083b,c\f\cf4d11062b815725de7757180d600a48db7d4760
++�
++P.idea/shelf/Uncommitted_changes_before_Update_at_4_16_2023_5_18_PM__Changes_.xml,9\1\918c3ab6e183b479574d24dc750dec297c4875f3
++�
++Q.idea/sonarlint/securityhotspotstore/e/d/ed6ff41fef3c4ef40fccc3198c3bae0663c295c0,0\7\076a165535a0e818973367b11f5a52c7aff03c0f
++�
++Q.idea/sonarlint/securityhotspotstore/f/0/f0e0f9cec86fe4b939ae22be5264c758801eb28f,f\c\fc51aad2f1ebe72ffedf49fa3dfea24b513ff6fe
++�
++Z.idea/shelf/Uncommitted_changes_before_Update_at_4_16_2023_5_18_PM_[Changes]/shelved.patch,c\d\cd2c4d6cf0892fc29e31de750f001e16fb16f1e0
++�
++Q.idea/sonarlint/securityhotspotstore/f/d/fdfe500f80fea99526c9a3a08e8fe0365be2a5e3,e\6\e67b75ef2cca8514deab4aaebf5a098dbb835647
++;
++horario.csv,4\9\49f2efb8b1fc30bb21449aa79e7916581529dd5c
++<
++horario.json,1\6\16f2cd285f882d5bd54fb664911637ffad236ae7
++�
++Q.idea/sonarlint/securityhotspotstore/8/3/83c97b69f1983e71cd804a5894ec167e14452d2c,e\f\efd6aa5cf12bd1415769b7f593cbdd8a7cb39646
++�
++P.idea/shelf/Uncommitted_changes_before_Update_at_4_16_2023_5_28_PM__Changes_.xml,5\d\5d9f6e67c32d61e917bd99f893f3baed521c84df
++�
++Q.idea/sonarlint/securityhotspotstore/8/a/8a6dae537be9f47878c6964c6ee40cab0ca75e28,d\c\dca526fd278f47862db2c8e8d0e3d6de031f13a8
++w
++G.idea/sonarlint/issuestore/2/c/2c5cb700c88aa343665696ccf5edb3c11c291d4e,5\9\597c38f1b4583500552f07ce47d6590e265ad876
++w
++G.idea/sonarlint/issuestore/9/a/9a43762646d6c9d33ccdc2a92292c8078d1078f0,4\7\47088ae03671a1d73d507de29e92ae465dbe8281
++w
++G.idea/sonarlint/issuestore/9/0/909762385fc6eb20f922a91c6865741308b57f2c,c\e\ce7799643a95553c6bee1d403d6cb738907a7f2c
+\ No newline at end of file
+Index: .idea/sonarlint/issuestore/index.pb
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>\n�\u0001\nP.idea/shelf/Uncommitted_changes_before_Update_at_4_15_2023_2_28_PM__Changes_.xml\u0012,7\\6\\76ce98f681f9b77f64bf87b962a970da2f59f3c2\n�\u0001\nP.idea/shelf/Uncommitted_changes_before_Update_at_4_15_2023_3_51_PM__Changes_.xml\u0012,6\\b\\6be43f4c5d8deaa72c01af7e2f920d3bdcbc4a01\n�\u0001\nP.idea/shelf/Uncommitted_changes_before_Update_at_4_14_2023_2_09_PM__Changes_.xml\u0012,5\\b\\5b295da528e98334516b35cbeac764c6b1e40190\n�\u0001\nQ.idea/shelf/Uncommitted_changes_before_Update_at_4_14_2023_12_16_PM__Changes_.xml\u0012,8\\2\\828077579f4e92baf3401ce84cfd9b34b428be90
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/sonarlint/issuestore/index.pb b/.idea/sonarlint/issuestore/index.pb
+--- a/.idea/sonarlint/issuestore/index.pb	(revision 0f05e140b63b043a2529e8ffabf300b4256137f4)
++++ b/.idea/sonarlint/issuestore/index.pb	(date 1681663092116)
+@@ -6,4 +6,138 @@
+ �
+ P.idea/shelf/Uncommitted_changes_before_Update_at_4_14_2023_2_09_PM__Changes_.xml,5\b\5b295da528e98334516b35cbeac764c6b1e40190
+ �
+-Q.idea/shelf/Uncommitted_changes_before_Update_at_4_14_2023_12_16_PM__Changes_.xml,8\2\828077579f4e92baf3401ce84cfd9b34b428be90
+\ No newline at end of file
++Q.idea/shelf/Uncommitted_changes_before_Update_at_4_14_2023_12_16_PM__Changes_.xml,8\2\828077579f4e92baf3401ce84cfd9b34b428be90
++�
++Q.idea/sonarlint/securityhotspotstore/9/0/909762385fc6eb20f922a91c6865741308b57f2c,e\0\e0ea4108d198a3d2e4e87c48063db9d2bffad652
++�
++Q.idea/sonarlint/securityhotspotstore/9/a/9a43762646d6c9d33ccdc2a92292c8078d1078f0,5\6\5638eca1288f3c9951eed1818124cbc4e2ba7f42
++w
++G.idea/sonarlint/issuestore/3/d/3de59755adc732c89bab1e2d6756d1bde4d8cafb,a\f\aff74e5f3b1d2a28200fc0cb4f77f987a11ce5aa
++�
++P.idea/shelf/Uncommitted_changes_before_Update_at_4_16_2023_3_47_PM__Changes_.xml,1\a\1af4202e5e940db94f8bba61cc5b7bdcc4b2ef19
++w
++G.idea/sonarlint/issuestore/7/6/76ce98f681f9b77f64bf87b962a970da2f59f3c2,8\7\876b25f216b6a7de98fbd9d7893bc0a6a453a97c
++w
++G.idea/sonarlint/issuestore/3/e/3ed597bbc914dcdbcad89ee9731ed7919cd49e27,2\3\23a30ad90b7d1e66cfd69712571191518751baf3
++�
++Q.idea/sonarlint/securityhotspotstore/7/7/77922fd29c5f9cffec74a9e6c0c1e36d5da66290,9\2\9238f390a26a401e439d02007fbaea676ac0cba3
++w
++G.idea/sonarlint/issuestore/f/0/f0e0f9cec86fe4b939ae22be5264c758801eb28f,5\0\50e216b4439d2538168c3ddca9c0c2fe23bd1c02
++w
++G.idea/sonarlint/issuestore/f/f/ff93a5dfc341d7a6c4d0a986f88b1cc52351083b,c\4\c46a493f95fd939f139ce1dc0a446e768bfbfd04
++w
++G.idea/sonarlint/issuestore/f/d/fdfe500f80fea99526c9a3a08e8fe0365be2a5e3,6\3\63a27c1017ac9b71ca123bd5ebc8d9f6c41ffb52
++w
++G.idea/sonarlint/issuestore/e/d/ed6ff41fef3c4ef40fccc3198c3bae0663c295c0,9\d\9d57ceee1887f3eddb8319d82c75105b09c04904
++w
++G.idea/sonarlint/issuestore/7/7/77922fd29c5f9cffec74a9e6c0c1e36d5da66290,3\c\3cd31ea3ff538c6f2e9f8d0b4ab9c34321136c05
++�
++Q.idea/sonarlint/securityhotspotstore/4/4/442292b8a7efeabbe4cc176709b833b1792140ec,2\c\2cabb939da04d3de3a200bf2b575690e1a16316d
++�
++Q.idea/sonarlint/securityhotspotstore/b/4/b4310661d42e77e00abb8de82a658ce6c3d0ba62,2\2\226dccb3e32fca8d780b79abf553a24bcae41e07
++�
++Q.idea/sonarlint/securityhotspotstore/b/b/bbf202272a96de5cd6b6828ffdc55fb3ce45289c,4\8\4863281891d32ef796d6f680d78cb100e7c940be
++�
++Z.idea/shelf/Uncommitted_changes_before_Update_at_4_16_2023_3_47_PM_[Changes]/shelved.patch,9\a\9acd039cc5af2a31051f2ef06567647297b65057
++�
++Q.idea/sonarlint/securityhotspotstore/0/0/0017a53952a5b74ce5650e5d2da4f060a3c1d474,a\2\a20262e564b9b9f029145f80b879f718c570c690
++�
++Q.idea/sonarlint/securityhotspotstore/1/f/1f636f5bf62a58060f5d229644bfec219d93f5fb,3\c\3cb222f0e7290641697e047824792180f318d679
++�
++Q.idea/sonarlint/securityhotspotstore/2/c/2c5cb700c88aa343665696ccf5edb3c11c291d4e,e\0\e0fbe87a90d2e0fd2b8b40992fd8ca89358502b7
++�
++Q.idea/sonarlint/securityhotspotstore/7/6/76ce98f681f9b77f64bf87b962a970da2f59f3c2,5\e\5eebe54866f6bf9461d97620eb8e52bfdb5989a6
++w
++G.idea/sonarlint/issuestore/5/3/53dba0041108e5f77753d10a251a48c3d20ecad3,1\8\18340a0526a92f64a9227c4ae89cc0e5ec99794b
++w
++G.idea/sonarlint/issuestore/5/9/5983ea801abf0daa4d5e05f06e5a4859efd3fa3b,9\7\974597921d46903b2830ea22c2d48544d43c4410
++�
++Q.idea/sonarlint/securityhotspotstore/3/d/3de59755adc732c89bab1e2d6756d1bde4d8cafb,7\0\7015eedbdfa70c67bce5c29f2376bf898fe2c13c
++�
++Q.idea/sonarlint/securityhotspotstore/3/e/3ed597bbc914dcdbcad89ee9731ed7919cd49e27,2\8\28c5840e3f9fce953052da11a1858415f58b59cd
++�
++Q.idea/sonarlint/securityhotspotstore/a/1/a1f6b2cedf0a16b012f8f2450fd7723447a9cf54,3\e\3eabb5cfe0a4296569c4c141dfa72432342949e4
++�
++Q.idea/sonarlint/securityhotspotstore/a/1/a1d200ab594ed2cc9c5a0bcb5ae2c79cd8523885,2\3\23a712b4b4f0ca06e1d8914391b0a740392cb063
++�
++Q.idea/sonarlint/securityhotspotstore/a/e/ae9ddf453f55affea2d6b9e3973cac1eb2efb4e1,e\3\e36d3b35b0aa033dfcf067b2cd16117a306b1e80
++�
++Q.idea/sonarlint/securityhotspotstore/a/d/ad89c2c590c35251cf0921759eb97eea62490ee3,1\0\10fdc2995ac15c48ba80504f3af14d195d96b1d8
++w
++G.idea/sonarlint/issuestore/a/e/ae9ddf453f55affea2d6b9e3973cac1eb2efb4e1,6\2\6248197ca7a44d8bc42b5bd6cd80cd6e99143261
++�
++Q.idea/sonarlint/securityhotspotstore/a/e/aeb9fc6c0fabd3bf33aa03581b9c9f03000330c9,4\3\43e45203438088c7d4a7cafdd527e94205c2c169
++w
++G.idea/sonarlint/issuestore/8/3/83c97b69f1983e71cd804a5894ec167e14452d2c,8\0\803c41fb12a3cab769ec66c457d175aa6bdf5b0c
++w
++G.idea/sonarlint/issuestore/8/a/8a6dae537be9f47878c6964c6ee40cab0ca75e28,8\e\8e3d5572111947a6fc62da316a319faf3e927047
++w
++G.idea/sonarlint/issuestore/a/d/ad89c2c590c35251cf0921759eb97eea62490ee3,6\b\6b198d4b1a08ec726a12cf433331e18a95e2d9bc
++�
++Q.idea/sonarlint/securityhotspotstore/5/9/5983ea801abf0daa4d5e05f06e5a4859efd3fa3b,1\5\150240a8cb8071d1192e02e678ba78f4bea95433
++w
++G.idea/sonarlint/issuestore/a/1/a1f6b2cedf0a16b012f8f2450fd7723447a9cf54,a\c\ac2493af7a27428ee3675958a0019389f2929ecb
++�
++Q.idea/sonarlint/securityhotspotstore/5/3/53dba0041108e5f77753d10a251a48c3d20ecad3,6\a\6a51debefff1931f20ad1d6a913abb9afc2b518d
++�
++Q.idea/sonarlint/securityhotspotstore/8/6/86eb87633dc878b76b167925af6d69b954bf5758,c\a\ca7d0e890d166f7934f87b58b0b63ed078f938e5
++w
++G.idea/sonarlint/issuestore/8/6/86eb87633dc878b76b167925af6d69b954bf5758,0\b\0bb62dfedefd8d91e3f4122bcb811889ad1283c7
++w
++G.idea/sonarlint/issuestore/a/1/a1d200ab594ed2cc9c5a0bcb5ae2c79cd8523885,b\f\bf8c2bfb306b0a893d4de2d9ff4ba3975a02e2b8
++w
++G.idea/sonarlint/issuestore/6/7/67eaf978e530588b1f14f51aeca296c2b659e272,8\4\841fc93efe1e898ee0d3be72d3e3c86e538e94b8
++w
++G.idea/sonarlint/issuestore/6/b/6be43f4c5d8deaa72c01af7e2f920d3bdcbc4a01,8\c\8cb032c73c987e922f9c17e95865b79fffa28d35
++w
++G.idea/sonarlint/issuestore/1/f/1f636f5bf62a58060f5d229644bfec219d93f5fb,2\c\2cf28acea12649bb250b77e0fe29e0db0e31d26c
++�
++Q.idea/sonarlint/securityhotspotstore/6/7/67eaf978e530588b1f14f51aeca296c2b659e272,3\1\31c845172c50fd6cd68741f1ca4248d96436f9df
++�
++Q.idea/sonarlint/securityhotspotstore/6/b/6be43f4c5d8deaa72c01af7e2f920d3bdcbc4a01,9\0\90a02d61713400f263f4fe80a30b14a329d15c57
++�
++Z.idea/shelf/Uncommitted_changes_before_Update_at_4_15_2023_4_43_PM_[Changes]/shelved.patch,8\5\85de95ffe3b1dd6425c3feacc2fb348a83fe8668
++w
++G.idea/sonarlint/issuestore/a/e/aeb9fc6c0fabd3bf33aa03581b9c9f03000330c9,4\7\4770f2f69df5870994862b599381c92da8aff68b
++w
++G.idea/sonarlint/issuestore/0/0/0017a53952a5b74ce5650e5d2da4f060a3c1d474,4\d\4d88ae87d579fa106180a26bc4a113bbd80f8933
++�
++P.idea/shelf/Uncommitted_changes_before_Update_at_4_15_2023_4_43_PM__Changes_.xml,0\d\0db29ba2ba2c6b4083828ebe60f1ea6e29477dbb
++w
++G.idea/sonarlint/issuestore/4/4/442292b8a7efeabbe4cc176709b833b1792140ec,8\6\863e0292fd7e9b3e74dafd6cc01f73ba76346482
++w
++G.idea/sonarlint/issuestore/b/4/b4310661d42e77e00abb8de82a658ce6c3d0ba62,b\a\ba9a47b4bbb30016a17b2b448196454f4c3e09ef
++w
++G.idea/sonarlint/issuestore/b/b/bbf202272a96de5cd6b6828ffdc55fb3ce45289c,8\4\84e95bd0ea795e5307464eb72e7bd95d9f673c00
++�
++P.idea/shelf/Uncommitted_changes_before_Update_at_4_16_2023_4_52_PM__Changes_.xml,5\f\5f54e8802477674ccfb671a12780a115a995b3ff
++�
++Z.idea/shelf/Uncommitted_changes_before_Update_at_4_16_2023_4_52_PM_[Changes]/shelved.patch,4\7\47f2bf1e1d4654b379971cab70ada0a1582bd326
++�
++Q.idea/sonarlint/securityhotspotstore/f/f/ff93a5dfc341d7a6c4d0a986f88b1cc52351083b,c\f\cf4d11062b815725de7757180d600a48db7d4760
++�
++P.idea/shelf/Uncommitted_changes_before_Update_at_4_16_2023_5_18_PM__Changes_.xml,9\1\918c3ab6e183b479574d24dc750dec297c4875f3
++�
++Q.idea/sonarlint/securityhotspotstore/e/d/ed6ff41fef3c4ef40fccc3198c3bae0663c295c0,0\7\076a165535a0e818973367b11f5a52c7aff03c0f
++�
++Q.idea/sonarlint/securityhotspotstore/f/0/f0e0f9cec86fe4b939ae22be5264c758801eb28f,f\c\fc51aad2f1ebe72ffedf49fa3dfea24b513ff6fe
++�
++Z.idea/shelf/Uncommitted_changes_before_Update_at_4_16_2023_5_18_PM_[Changes]/shelved.patch,c\d\cd2c4d6cf0892fc29e31de750f001e16fb16f1e0
++�
++Q.idea/sonarlint/securityhotspotstore/f/d/fdfe500f80fea99526c9a3a08e8fe0365be2a5e3,e\6\e67b75ef2cca8514deab4aaebf5a098dbb835647
++;
++horario.csv,4\9\49f2efb8b1fc30bb21449aa79e7916581529dd5c
++<
++horario.json,1\6\16f2cd285f882d5bd54fb664911637ffad236ae7
++�
++Q.idea/sonarlint/securityhotspotstore/8/3/83c97b69f1983e71cd804a5894ec167e14452d2c,e\f\efd6aa5cf12bd1415769b7f593cbdd8a7cb39646
++�
++P.idea/shelf/Uncommitted_changes_before_Update_at_4_16_2023_5_28_PM__Changes_.xml,5\d\5d9f6e67c32d61e917bd99f893f3baed521c84df
++�
++Q.idea/sonarlint/securityhotspotstore/8/a/8a6dae537be9f47878c6964c6ee40cab0ca75e28,d\c\dca526fd278f47862db2c8e8d0e3d6de031f13a8
++w
++G.idea/sonarlint/issuestore/2/c/2c5cb700c88aa343665696ccf5edb3c11c291d4e,5\9\597c38f1b4583500552f07ce47d6590e265ad876
++w
++G.idea/sonarlint/issuestore/9/a/9a43762646d6c9d33ccdc2a92292c8078d1078f0,4\7\47088ae03671a1d73d507de29e92ae465dbe8281
++w
++G.idea/sonarlint/issuestore/9/0/909762385fc6eb20f922a91c6865741308b57f2c,c\e\ce7799643a95553c6bee1d403d6cb738907a7f2c
+\ No newline at end of file
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"5073210c-846a-4274-bc76-2e6130a4e9c5\" name=\"Changes\" comment=\"loadFile e saveFile a partir de url\">\r\n      <change afterPath=\"$PROJECT_DIR$/horario.csv\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/horarios.json\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/horario.json\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/Functions.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/Functions.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/Main.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/Main.java\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Class\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"GitToolBoxStore\">\r\n    <option name=\"projectConfigVersion\" value=\"5\" />\r\n  </component>\r\n  <component name=\"GithubDefaultAccount\">\r\n    <option name=\"defaultAccountId\" value=\"0c3ada6c-1142-4087-9b55-4c2497ca0e17\" />\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"2OPjVcdFrN9JAn9IatUekJt9Ebf\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\">\r\n    <ConfirmationsSetting value=\"2\" id=\"Add\" />\r\n  </component>\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">{\r\n  &quot;keyToString&quot;: {\r\n    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,\r\n    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,\r\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\r\n    &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;true&quot;,\r\n    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,\r\n    &quot;git-widget-placeholder&quot;: &quot;master&quot;,\r\n    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,\r\n    &quot;last_opened_file_path&quot;: &quot;C:/Users/gmigu/Documents/3ano/2sem/ES&quot;,\r\n    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,\r\n    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,\r\n    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,\r\n    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,\r\n    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,\r\n    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,\r\n    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,\r\n    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;,\r\n    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;\r\n  }\r\n}</component>\r\n  <component name=\"RunManager\" selected=\"Application.Main\">\r\n    <configuration name=\"Horario\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"Horario\" />\r\n      <module name=\"ES-2023-2Sem-Terca-Feira-LEI-GrupoC\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"Main\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"Main\" />\r\n      <module name=\"ES-2023-2Sem-Terca-Feira-LEI-GrupoC\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <recent_temporary>\r\n      <list>\r\n        <item itemvalue=\"Application.Main\" />\r\n        <item itemvalue=\"Application.Horario\" />\r\n      </list>\r\n    </recent_temporary>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"5073210c-846a-4274-bc76-2e6130a4e9c5\" name=\"Changes\" comment=\"\" />\r\n      <created>1681469140000</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1681469140000</updated>\r\n      <workItem from=\"1681469141889\" duration=\"1800000\" />\r\n      <workItem from=\"1681558403482\" duration=\"3062000\" />\r\n      <workItem from=\"1681566035142\" duration=\"1661000\" />\r\n      <workItem from=\"1681568474741\" duration=\"1263000\" />\r\n      <workItem from=\"1681570036386\" duration=\"387000\" />\r\n      <workItem from=\"1681570891966\" duration=\"404000\" />\r\n      <workItem from=\"1681571300289\" duration=\"1309000\" />\r\n      <workItem from=\"1681575000887\" duration=\"1186000\" />\r\n      <workItem from=\"1681656962910\" duration=\"3495000\" />\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"init_proj\">\r\n      <created>1681470389810</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1681470389810</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"CSV para JSON sem estrutura\">\r\n      <created>1681477533280</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1681477533280</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00003\" summary=\"CSV para JSON com estrutura\">\r\n      <created>1681562358177</created>\r\n      <option name=\"number\" value=\"00003\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1681562358177</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00004\" summary=\"CSV para JSON com estrutura corrigida\">\r\n      <created>1681568843883</created>\r\n      <option name=\"number\" value=\"00004\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1681568843883</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00005\" summary=\"CSV para JSON com estrutura corrigida\">\r\n      <created>1681569808208</created>\r\n      <option name=\"number\" value=\"00005\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1681569808208</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00006\" summary=\"JSON para CSV incompleto\">\r\n      <created>1681572588882</created>\r\n      <option name=\"number\" value=\"00006\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00006\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1681572588882</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00007\" summary=\"JSON para CSV incompleto\">\r\n      <created>1681575550384</created>\r\n      <option name=\"number\" value=\"00007\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00007\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1681575550384</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00008\" summary=\"loadFile e saveFile a partir de url\">\r\n      <created>1681659549273</created>\r\n      <option name=\"number\" value=\"00008\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00008\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1681659549273</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"9\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State>\r\n              <option name=\"FILTERS\">\r\n                <map>\r\n                  <entry key=\"branch\">\r\n                    <value>\r\n                      <list>\r\n                        <option value=\"origin/master\" />\r\n                      </list>\r\n                    </value>\r\n                  </entry>\r\n                </map>\r\n              </option>\r\n            </State>\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <option name=\"ADD_EXTERNAL_FILES_SILENTLY\" value=\"true\" />\r\n    <MESSAGE value=\"init_proj\" />\r\n    <MESSAGE value=\"CSV para JSON sem estrutura\" />\r\n    <MESSAGE value=\"CSV para JSON com estrutura\" />\r\n    <MESSAGE value=\"CSV para JSON com estrutura corrigida\" />\r\n    <MESSAGE value=\"JSON para CSV incompleto\" />\r\n    <MESSAGE value=\"loadFile e saveFile a partir de url\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"loadFile e saveFile a partir de url\" />\r\n  </component>\r\n  <component name=\"XDebuggerManager\">\r\n    <breakpoint-manager>\r\n      <breakpoints>\r\n        <breakpoint enabled=\"true\" type=\"java-exception\">\r\n          <properties class=\"java.io.FileNotFoundException\" package=\"java.io\" />\r\n          <option name=\"timeStamp\" value=\"1\" />\r\n        </breakpoint>\r\n      </breakpoints>\r\n    </breakpoint-manager>\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 0f05e140b63b043a2529e8ffabf300b4256137f4)
++++ b/.idea/workspace.xml	(date 1681663985625)
+@@ -4,11 +4,10 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="5073210c-846a-4274-bc76-2e6130a4e9c5" name="Changes" comment="loadFile e saveFile a partir de url">
+-      <change afterPath="$PROJECT_DIR$/horario.csv" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/horarios.json" beforeDir="false" afterPath="$PROJECT_DIR$/horario.json" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/Functions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Functions.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
++    <list default="true" id="5073210c-846a-4274-bc76-2e6130a4e9c5" name="Changes" comment="JSON to CSV incompleto">
++      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -27,9 +26,6 @@
+   </component>
+   <component name="GitToolBoxStore">
+     <option name="projectConfigVersion" value="5" />
+-  </component>
+-  <component name="GithubDefaultAccount">
+-    <option name="defaultAccountId" value="0c3ada6c-1142-4087-9b55-4c2497ca0e17" />
+   </component>
+   <component name="MarkdownSettingsMigration">
+     <option name="stateVersion" value="1" />
+@@ -59,7 +55,7 @@
+     &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;,
++    &quot;settings.editor.selected.configurable&quot;: &quot;org.jetbrains.plugins.github.ui.GithubSettingsConfigurable&quot;,
+     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+   }
+ }</component>
+@@ -102,6 +98,7 @@
+       <workItem from="1681571300289" duration="1309000" />
+       <workItem from="1681575000887" duration="1186000" />
+       <workItem from="1681656962910" duration="3495000" />
++      <workItem from="1681663075361" duration="652000" />
+     </task>
+     <task id="LOCAL-00001" summary="init_proj">
+       <created>1681470389810</created>
+@@ -159,7 +156,14 @@
+       <option name="project" value="LOCAL" />
+       <updated>1681659549273</updated>
+     </task>
+-    <option name="localTasksCounter" value="9" />
++    <task id="LOCAL-00009" summary="JSON to CSV incompleto">
++      <created>1681662675683</created>
++      <option name="number" value="00009" />
++      <option name="presentableId" value="LOCAL-00009" />
++      <option name="project" value="LOCAL" />
++      <updated>1681662675683</updated>
++    </task>
++    <option name="localTasksCounter" value="10" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+@@ -196,7 +200,8 @@
+     <MESSAGE value="CSV para JSON com estrutura corrigida" />
+     <MESSAGE value="JSON para CSV incompleto" />
+     <MESSAGE value="loadFile e saveFile a partir de url" />
+-    <option name="LAST_COMMIT_MESSAGE" value="loadFile e saveFile a partir de url" />
++    <MESSAGE value="JSON to CSV incompleto" />
++    <option name="LAST_COMMIT_MESSAGE" value="JSON to CSV incompleto" />
+   </component>
+   <component name="XDebuggerManager">
+     <breakpoint-manager>
