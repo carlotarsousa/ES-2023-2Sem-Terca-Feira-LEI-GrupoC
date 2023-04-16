@@ -1,0 +1,239 @@
+Index: src/main/java/Main.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import java.io.*;\r\n\r\npublic class Main{\r\n    public static void main(String[] args) throws FileNotFoundException {\r\n        //Functions.csvToJSON();\r\n        Functions.convertJsonToCsv(\"horarios.json\");\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/Main.java b/src/main/java/Main.java
+--- a/src/main/java/Main.java	(revision a1160ba03b41bd9638990e4bee5f049e20f4f4a7)
++++ b/src/main/java/Main.java	(date 1681661822072)
+@@ -1,8 +1,9 @@
+ import java.io.*;
+ 
+ public class Main{
+-    public static void main(String[] args) throws FileNotFoundException {
+-        //Functions.csvToJSON();
+-        Functions.convertJsonToCsv("horarios.json");
++    public static void main(String[] args) throws IOException {
++//        Functions.csvToJSON("horario.json", "horario.csv");
++//        Functions.convertJsonToCsv("horario.json");
++        Functions.jsonToCsv("horario.json", "horario.csv");
+     }
+ }
+Index: src/main/java/Functions.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import org.json.JSONArray;\r\nimport org.json.JSONException;\r\nimport org.json.JSONObject;\r\nimport org.json.CDL;\r\nimport org.apache.commons.io.FileUtils;\r\n\r\nimport java.io.*;\r\nimport java.net.MalformedURLException;\r\nimport java.net.URI;\r\nimport java.net.URL;\r\nimport java.nio.file.Files;\r\nimport java.nio.file.Paths;\r\nimport java.util.logging.Level;\r\nimport java.util.logging.Logger;\r\n\r\npublic class Functions {\r\n\r\n    private Functions() {\r\n        throw new IllegalStateException(\"Aux Functions\");\r\n    }\r\n\r\n    public static void csvToJSON(String loadFilePath, String saveFilePath) throws FileNotFoundException {\r\n        Logger logger = Logger.getLogger(Main.class.getName());\r\n        try (BufferedReader br = loadFile(loadFilePath)) {\r\n            String line;\r\n            JSONArray jsonArray = new JSONArray();\r\n            boolean firstLine = true;\r\n            while ((line = br.readLine()) != null) {\r\n                logger.log(Level.INFO, line);\r\n                if (firstLine) {\r\n                    firstLine = false;\r\n                    continue;\r\n                }\r\n\r\n                String[] columns = line.split(\";\", -1);\r\n\r\n                JSONObject sala = new JSONObject();\r\n                sala.put(\"Sala\", columns[9]);\r\n                sala.put(\"Lotação da sala\", columns[10]);\r\n                JSONObject data = new JSONObject();\r\n                data.put(\"Data\", columns[8]);\r\n                data.put(\"Dia da semana\", columns[5]);\r\n                data.put(\"Hora início da aula\", columns[6]);\r\n                data.put(\"Hora fim da aula\", columns[7]);\r\n                data.put(\"Sala atribuída à aula\", sala);\r\n                JSONObject turno = new JSONObject();\r\n                turno.put(\"Id Turno\", columns[2]);\r\n                turno.put(\"Turma\", columns[3].split(\",\\\\s*\"));\r\n                turno.put(\"Inscritos no turno\", Integer.parseInt(columns[4]));\r\n                turno.put(\"Data da aula\", data);\r\n                JSONObject unidadeCurricular = new JSONObject();\r\n                unidadeCurricular.put(\"Designação\", columns[1]);\r\n                unidadeCurricular.put(\"Curso\", columns[0].split(\",\\\\s*\"));\r\n                unidadeCurricular.put(\"Turno\", turno);\r\n                JSONObject horario = new JSONObject();\r\n                horario.put(\"Unidade Curricular\", unidadeCurricular);\r\n                jsonArray.put(horario);\r\n            }\r\n\r\n            try (BufferedWriter bw = saveFile(saveFilePath)) {\r\n                if(bw != null) {\r\n                    bw.write(jsonArray.toString(4));\r\n                    bw.close();\r\n                }\r\n            }\r\n\r\n            logger.log(Level.INFO, \"Arquivo JSON criado com sucesso\");\r\n        } catch (IOException | JSONException | NumberFormatException e) {\r\n            throw new FileNotFoundException(\"Não foi possível abrir ler o ficheiro\");\r\n        }\r\n    }\r\n\r\n    public static void jsonTocsv() {\r\n        String jsonString;\r\n        JSONObject jsonObject;\r\n        try {\r\n            jsonString = new String(Files.readAllBytes(Paths.get(\"horarios.json\")));\r\n            jsonObject = new JSONObject(jsonString);\r\n            JSONArray docs = jsonObject.getJSONArray(\"horario\");\r\n            File file = new File(\"output.csv\");\r\n            String csvString = CDL.toString(docs);\r\n            FileUtils.writeStringToFile(file, csvString);\r\n        }\r\n        catch (Exception e) {\r\n            e.printStackTrace();\r\n        }\r\n    }\r\n\r\n    public static void convertJsonToCsv(String fileName) {\r\n        try {\r\n            BufferedReader reader = new BufferedReader(new FileReader(fileName));\r\n            String fileInString = \"\";\r\n            String line;\r\n            while ((line = reader.readLine()) != null) {\r\n                fileInString += line;\r\n            }\r\n            reader.close();\r\n\r\n            JSONArray jsonArray = new JSONArray(fileInString);\r\n\r\n            FileWriter writer = new FileWriter(\"horario.csv\");\r\n            writer.append(\"Curso;Unidade Curricular;Turno;Turma;Inscritos no turno;Dia da semana;Hora início da aula;Hora fim da aula;Data da aula;Sala atribuída à aula;Lotação da sala\\n\");\r\n            for (int i = 0; i < jsonArray.length(); i++) {\r\n                JSONObject jsonObject = jsonArray.getJSONObject(i);\r\n                JSONObject turno = jsonObject.getJSONObject(\"Unidade Curricular\").getJSONObject(\"Turno\");\r\n                String unidadeCurricular = jsonObject.getJSONObject(\"Unidade Curricular\").getString(\"Designação\");\r\n                String curso = jsonObject.getJSONObject(\"Unidade Curricular\").getJSONArray(\"Curso\").getString(0);\r\n                String turnoId = turno.getString(\"Id Turno\");\r\n                String turma = turno.getJSONArray(\"Turma\").getString(0);\r\n                int inscritos = turno.getInt(\"Inscritos no turno\");\r\n                String horaInicio = turno.getJSONObject(\"Data da aula\").getString(\"Hora início da aula\");\r\n                String horaFim = turno.getJSONObject(\"Data da aula\").getString(\"Hora fim da aula\");\r\n                String data = turno.getJSONObject(\"Data da aula\").getString(\"Data\");\r\n                String diaSemana = turno.getJSONObject(\"Data da aula\").getString(\"Dia da semana\");\r\n                int lotacaoSala = turno.getJSONObject(\"Data da aula\").getJSONObject(\"Sala atribuída à aula\").getInt(\"Lotação da sala\");\r\n                String sala = turno.getJSONObject(\"Data da aula\").getJSONObject(\"Sala atribuída à aula\").getString(\"Sala\");\r\n                writer.append(String.format(\"%s;%s;%s;%s;%d;%s;%s;%s;%s;%s;%d%n\", curso, unidadeCurricular, turnoId, turma, inscritos, diaSemana, horaInicio, horaFim, data, sala, lotacaoSala));\r\n            }\r\n            writer.flush();\r\n            writer.close();\r\n        } catch (IOException | JSONException e) {\r\n            e.printStackTrace();\r\n        }\r\n    }\r\n    private static BufferedReader loadFile(String filePath) {\r\n        try {\r\n            URL url = new URL(filePath);\r\n            return new BufferedReader(new InputStreamReader(url.openStream()));\r\n        } catch (IOException e) {\r\n            e.printStackTrace();\r\n        }\r\n        return null;\r\n    }\r\n    private static BufferedWriter saveFile(String filePath) {\r\n        try {\r\n            URL url = new URL(filePath);\r\n            return new BufferedWriter(new OutputStreamWriter(url.openConnection().getOutputStream()));\r\n        } catch (IOException e) {\r\n            e.printStackTrace();\r\n        }\r\n        return null;\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/Functions.java b/src/main/java/Functions.java
+--- a/src/main/java/Functions.java	(revision a1160ba03b41bd9638990e4bee5f049e20f4f4a7)
++++ b/src/main/java/Functions.java	(date 1681661936961)
+@@ -1,15 +1,9 @@
+ import org.json.JSONArray;
+ import org.json.JSONException;
+ import org.json.JSONObject;
+-import org.json.CDL;
+-import org.apache.commons.io.FileUtils;
+ 
+ import java.io.*;
+-import java.net.MalformedURLException;
+-import java.net.URI;
+ import java.net.URL;
+-import java.nio.file.Files;
+-import java.nio.file.Paths;
+ import java.util.logging.Level;
+ import java.util.logging.Logger;
+ 
+@@ -20,7 +14,7 @@
+     }
+ 
+     public static void csvToJSON(String loadFilePath, String saveFilePath) throws FileNotFoundException {
+-        Logger logger = Logger.getLogger(Main.class.getName());
++        Logger logger = Logger.getLogger(Functions.class.getName());
+         try (BufferedReader br = loadFile(loadFilePath)) {
+             String line;
+             JSONArray jsonArray = new JSONArray();
+@@ -60,68 +54,85 @@
+             try (BufferedWriter bw = saveFile(saveFilePath)) {
+                 if(bw != null) {
+                     bw.write(jsonArray.toString(4));
+-                    bw.close();
+                 }
+             }
+ 
+             logger.log(Level.INFO, "Arquivo JSON criado com sucesso");
+-        } catch (IOException | JSONException | NumberFormatException e) {
+-            throw new FileNotFoundException("Não foi possível abrir ler o ficheiro");
++        } catch (IOException e) {
++            throw new FileNotFoundException("Erro ao ler o ficheiro CSV: " + e.getMessage());
++        } catch (JSONException e) {
++            throw new RuntimeException("Erro ao converter de CSV para JSON: " + e.getMessage(), e);
++        } catch (NumberFormatException e) {
++            throw new RuntimeException("Erro ao converter de CSV para JSON: formato de número inválido: " + e.getMessage(), e);
+         }
+     }
++
++    public static void jsonToCsv(String jsonFile, String csvFile) throws IOException, JSONException {
++        JSONArray jsonArray;
++        try (BufferedReader reader = new BufferedReader(new FileReader(jsonFile))) {
++            jsonArray = new JSONArray(reader.readLine());
++        }
++        try (BufferedWriter writer = new BufferedWriter(new FileWriter(csvFile))) {
++            JSONObject headers = jsonArray.getJSONObject(0);
++            for (String key : headers.keySet()) {
++                writer.write(key);
++                if (key != headers.keySet().toArray()[headers.keySet().size() - 1]) {
++                    writer.write(",");
++                }
++            }
++            writer.newLine();
+ 
+-    public static void jsonTocsv() {
+-        String jsonString;
+-        JSONObject jsonObject;
+-        try {
+-            jsonString = new String(Files.readAllBytes(Paths.get("horarios.json")));
+-            jsonObject = new JSONObject(jsonString);
+-            JSONArray docs = jsonObject.getJSONArray("horario");
+-            File file = new File("output.csv");
+-            String csvString = CDL.toString(docs);
+-            FileUtils.writeStringToFile(file, csvString);
+-        }
+-        catch (Exception e) {
+-            e.printStackTrace();
++            for (int i = 0; i < jsonArray.length(); i++) {
++                JSONObject obj = jsonArray.getJSONObject(i);
++                for (String key : headers.keySet()) {
++                    writer.write(obj.get(key).toString());
++                    if (key != headers.keySet().toArray()[headers.keySet().size() - 1]) {
++                        writer.write(",");
++                    }
++                }
++                writer.newLine();
++            }
+         }
+     }
+ 
+     public static void convertJsonToCsv(String fileName) {
+         try {
+-            BufferedReader reader = new BufferedReader(new FileReader(fileName));
+-            String fileInString = "";
+-            String line;
+-            while ((line = reader.readLine()) != null) {
+-                fileInString += line;
++            String fileInString;
++            try (BufferedReader reader = new BufferedReader(new FileReader(fileName))) {
++                fileInString = "";
++                String line;
++                while ((line = reader.readLine()) != null) {
++                    fileInString += line;
++                }
+             }
+-            reader.close();
+ 
+             JSONArray jsonArray = new JSONArray(fileInString);
+ 
+-            FileWriter writer = new FileWriter("horario.csv");
+-            writer.append("Curso;Unidade Curricular;Turno;Turma;Inscritos no turno;Dia da semana;Hora início da aula;Hora fim da aula;Data da aula;Sala atribuída à aula;Lotação da sala\n");
+-            for (int i = 0; i < jsonArray.length(); i++) {
+-                JSONObject jsonObject = jsonArray.getJSONObject(i);
+-                JSONObject turno = jsonObject.getJSONObject("Unidade Curricular").getJSONObject("Turno");
+-                String unidadeCurricular = jsonObject.getJSONObject("Unidade Curricular").getString("Designação");
+-                String curso = jsonObject.getJSONObject("Unidade Curricular").getJSONArray("Curso").getString(0);
+-                String turnoId = turno.getString("Id Turno");
+-                String turma = turno.getJSONArray("Turma").getString(0);
+-                int inscritos = turno.getInt("Inscritos no turno");
+-                String horaInicio = turno.getJSONObject("Data da aula").getString("Hora início da aula");
+-                String horaFim = turno.getJSONObject("Data da aula").getString("Hora fim da aula");
+-                String data = turno.getJSONObject("Data da aula").getString("Data");
+-                String diaSemana = turno.getJSONObject("Data da aula").getString("Dia da semana");
+-                int lotacaoSala = turno.getJSONObject("Data da aula").getJSONObject("Sala atribuída à aula").getInt("Lotação da sala");
+-                String sala = turno.getJSONObject("Data da aula").getJSONObject("Sala atribuída à aula").getString("Sala");
+-                writer.append(String.format("%s;%s;%s;%s;%d;%s;%s;%s;%s;%s;%d%n", curso, unidadeCurricular, turnoId, turma, inscritos, diaSemana, horaInicio, horaFim, data, sala, lotacaoSala));
+-            }
+-            writer.flush();
+-            writer.close();
++            try (FileWriter writer = new FileWriter("horario.csv")) {
++                writer.append("Curso;Unidade Curricular;Turno;Turma;Inscritos no turno;Dia da semana;Hora início da aula;Hora fim da aula;Data da aula;Sala atribuída à aula;Lotação da sala\n");
++                for (int i = 0; i < jsonArray.length(); i++) {
++                    JSONObject jsonObject = jsonArray.getJSONObject(i);
++                    JSONObject turno = jsonObject.getJSONObject("Unidade Curricular").getJSONObject("Turno");
++                    String unidadeCurricular = jsonObject.getJSONObject("Unidade Curricular").getString("Designação");
++                    String curso = jsonObject.getJSONObject("Unidade Curricular").getJSONArray("Curso").getString(0);
++                    String turnoId = turno.getString("Id Turno");
++                    String turma = turno.getJSONArray("Turma").getString(0);
++                    int inscritos = turno.getInt("Inscritos no turno");
++                    String horaInicio = turno.getJSONObject("Data da aula").getString("Hora início da aula");
++                    String horaFim = turno.getJSONObject("Data da aula").getString("Hora fim da aula");
++                    String data = turno.getJSONObject("Data da aula").getString("Data");
++                    String diaSemana = turno.getJSONObject("Data da aula").getString("Dia da semana");
++                    int lotacaoSala = turno.getJSONObject("Data da aula").getJSONObject("Sala atribuída à aula").getInt("Lotação da sala");
++                    String sala = turno.getJSONObject("Data da aula").getJSONObject("Sala atribuída à aula").getString("Sala");
++                    writer.append(String.format("%s;%s;%s;%s;%d;%s;%s;%s;%s;%s;%d%n", curso, unidadeCurricular, turnoId, turma, inscritos, diaSemana, horaInicio, horaFim, data, sala, lotacaoSala));
++                }
++                writer.flush();
++            }
+         } catch (IOException | JSONException e) {
+             e.printStackTrace();
+         }
+     }
++
+     private static BufferedReader loadFile(String filePath) {
+         try {
+             URL url = new URL(filePath);
+@@ -131,6 +142,7 @@
+         }
+         return null;
+     }
++
+     private static BufferedWriter saveFile(String filePath) {
+         try {
+             URL url = new URL(filePath);
+@@ -140,4 +152,4 @@
+         }
+         return null;
+     }
+-}
++}
+\ No newline at end of file
+Index: horario.csv
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/horario.csv b/horario.csv
+new file mode 100644
+--- /dev/null	(date 1681660354555)
++++ b/horario.csv	(date 1681660354555)
+@@ -0,0 +1,1 @@
++Curso;Unidade Curricular;Turno;Turma;Inscritos no turno;Dia da semana;Hora início da aula;Hora fim da aula;Data da aula;Sala atribuída à aula;Lotação da sala
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"5073210c-846a-4274-bc76-2e6130a4e9c5\" name=\"Changes\" comment=\"JSON para CSV incompleto\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/sonarlint/issuestore/8/8/88a9255124c95bdc913197c120a8d560edc59c8e\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/sonarlint/issuestore/9/f/9fe84ebb15faf917b7def6236dba604453cc61e0\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/8/8/88a9255124c95bdc913197c120a8d560edc59c8e\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/9/f/9fe84ebb15faf917b7def6236dba604453cc61e0\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/Functions.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/Functions.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/Main.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/Main.java\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Class\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"GitToolBoxStore\">\r\n    <option name=\"projectConfigVersion\" value=\"5\" />\r\n  </component>\r\n  <component name=\"GithubDefaultAccount\">\r\n    <option name=\"defaultAccountId\" value=\"0c3ada6c-1142-4087-9b55-4c2497ca0e17\" />\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"2OPjVcdFrN9JAn9IatUekJt9Ebf\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\">\r\n    <ConfirmationsSetting value=\"2\" id=\"Add\" />\r\n  </component>\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">{\r\n  &quot;keyToString&quot;: {\r\n    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,\r\n    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,\r\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\r\n    &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;true&quot;,\r\n    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,\r\n    &quot;git-widget-placeholder&quot;: &quot;master&quot;,\r\n    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,\r\n    &quot;last_opened_file_path&quot;: &quot;C:/Users/gmigu/Documents/3ano/2sem/ES&quot;,\r\n    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,\r\n    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,\r\n    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,\r\n    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,\r\n    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,\r\n    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,\r\n    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,\r\n    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;,\r\n    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;\r\n  }\r\n}</component>\r\n  <component name=\"RunManager\" selected=\"Application.Main\">\r\n    <configuration name=\"Horario\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"Horario\" />\r\n      <module name=\"ES-2023-2Sem-Terca-Feira-LEI-GrupoC\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"Main\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"Main\" />\r\n      <module name=\"ES-2023-2Sem-Terca-Feira-LEI-GrupoC\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <recent_temporary>\r\n      <list>\r\n        <item itemvalue=\"Application.Main\" />\r\n        <item itemvalue=\"Application.Horario\" />\r\n      </list>\r\n    </recent_temporary>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"5073210c-846a-4274-bc76-2e6130a4e9c5\" name=\"Changes\" comment=\"\" />\r\n      <created>1681469140000</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1681469140000</updated>\r\n      <workItem from=\"1681469141889\" duration=\"1800000\" />\r\n      <workItem from=\"1681558403482\" duration=\"3062000\" />\r\n      <workItem from=\"1681566035142\" duration=\"1661000\" />\r\n      <workItem from=\"1681568474741\" duration=\"1263000\" />\r\n      <workItem from=\"1681570036386\" duration=\"387000\" />\r\n      <workItem from=\"1681570891966\" duration=\"404000\" />\r\n      <workItem from=\"1681571300289\" duration=\"1309000\" />\r\n      <workItem from=\"1681575000887\" duration=\"1186000\" />\r\n      <workItem from=\"1681656962910\" duration=\"2458000\" />\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"init_proj\">\r\n      <created>1681470389810</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1681470389810</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"CSV para JSON sem estrutura\">\r\n      <created>1681477533280</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1681477533280</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00003\" summary=\"CSV para JSON com estrutura\">\r\n      <created>1681562358177</created>\r\n      <option name=\"number\" value=\"00003\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1681562358177</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00004\" summary=\"CSV para JSON com estrutura corrigida\">\r\n      <created>1681568843883</created>\r\n      <option name=\"number\" value=\"00004\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1681568843883</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00005\" summary=\"CSV para JSON com estrutura corrigida\">\r\n      <created>1681569808208</created>\r\n      <option name=\"number\" value=\"00005\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1681569808208</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00006\" summary=\"JSON para CSV incompleto\">\r\n      <created>1681572588882</created>\r\n      <option name=\"number\" value=\"00006\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00006\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1681572588882</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00007\" summary=\"JSON para CSV incompleto\">\r\n      <created>1681575550384</created>\r\n      <option name=\"number\" value=\"00007\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00007\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1681575550384</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"8\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State>\r\n              <option name=\"FILTERS\">\r\n                <map>\r\n                  <entry key=\"branch\">\r\n                    <value>\r\n                      <list>\r\n                        <option value=\"origin/master\" />\r\n                      </list>\r\n                    </value>\r\n                  </entry>\r\n                </map>\r\n              </option>\r\n            </State>\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <option name=\"ADD_EXTERNAL_FILES_SILENTLY\" value=\"true\" />\r\n    <MESSAGE value=\"init_proj\" />\r\n    <MESSAGE value=\"CSV para JSON sem estrutura\" />\r\n    <MESSAGE value=\"CSV para JSON com estrutura\" />\r\n    <MESSAGE value=\"CSV para JSON com estrutura corrigida\" />\r\n    <MESSAGE value=\"JSON para CSV incompleto\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"JSON para CSV incompleto\" />\r\n  </component>\r\n  <component name=\"XDebuggerManager\">\r\n    <breakpoint-manager>\r\n      <breakpoints>\r\n        <breakpoint enabled=\"true\" type=\"java-exception\">\r\n          <properties class=\"java.io.FileNotFoundException\" package=\"java.io\" />\r\n          <option name=\"timeStamp\" value=\"1\" />\r\n        </breakpoint>\r\n      </breakpoints>\r\n    </breakpoint-manager>\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision a1160ba03b41bd9638990e4bee5f049e20f4f4a7)
++++ b/.idea/workspace.xml	(date 1681661168093)
+@@ -5,11 +5,9 @@
+   </component>
+   <component name="ChangeListManager">
+     <list default="true" id="5073210c-846a-4274-bc76-2e6130a4e9c5" name="Changes" comment="JSON para CSV incompleto">
+-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/8/88a9255124c95bdc913197c120a8d560edc59c8e" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/f/9fe84ebb15faf917b7def6236dba604453cc61e0" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/8/8/88a9255124c95bdc913197c120a8d560edc59c8e" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/9/f/9fe84ebb15faf917b7def6236dba604453cc61e0" beforeDir="false" />
++      <change afterPath="$PROJECT_DIR$/horario.csv" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/horarios.json" beforeDir="false" afterPath="$PROJECT_DIR$/horario.json" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/src/main/java/Functions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Functions.java" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
+     </list>
+diff --git a/horarios.json b/horario.json
+rename from horarios.json
+rename to horario.json

@@ -1,0 +1,177 @@
+Index: .idea/sonarlint/securityhotspotstore/index.pb
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/sonarlint/securityhotspotstore/index.pb b/.idea/sonarlint/securityhotspotstore/index.pb
+--- a/.idea/sonarlint/securityhotspotstore/index.pb	(revision 4a7ba2a3d58d919df51f8958ebe301e6d9df20a9)
++++ b/.idea/sonarlint/securityhotspotstore/index.pb	(date 1681573354388)
+@@ -1,0 +1,53 @@
++
++w
++G.idea/sonarlint/issuestore/9/f/9fe84ebb15faf917b7def6236dba604453cc61e0,f\0\f0e0f9cec86fe4b939ae22be5264c758801eb28f
++�
++Q.idea/sonarlint/securityhotspotstore/9/2/9238f390a26a401e439d02007fbaea676ac0cba3,f\f\ff93a5dfc341d7a6c4d0a986f88b1cc52351083b
++�
++Z.idea/shelf/Uncommitted_changes_before_Update_at_4_15_2023_3_51_PM_[Changes]/shelved.patch,8\6\86eb87633dc878b76b167925af6d69b954bf5758
++�
++Q.idea/sonarlint/securityhotspotstore/8/8/88a9255124c95bdc913197c120a8d560edc59c8e,9\0\909762385fc6eb20f922a91c6865741308b57f2c
++w
++G.idea/sonarlint/issuestore/a/3/a36c54c6ea0de9a87c9d964195ef56b7f89e3392,5\3\53dba0041108e5f77753d10a251a48c3d20ecad3
++�
++P.idea/shelf/Uncommitted_changes_before_Update_at_4_15_2023_3_51_PM__Changes_.xml,6\b\6be43f4c5d8deaa72c01af7e2f920d3bdcbc4a01
++�
++Q.idea/sonarlint/securityhotspotstore/3/0/30205a209c6ce77c4cfc19a09e6f57c588b7fb88,6\7\67eaf978e530588b1f14f51aeca296c2b659e272
++�
++Q.idea/sonarlint/securityhotspotstore/3/c/3cd31ea3ff538c6f2e9f8d0b4ab9c34321136c05,5\9\5983ea801abf0daa4d5e05f06e5a4859efd3fa3b
++�
++Q.idea/sonarlint/securityhotspotstore/5/b/5b295da528e98334516b35cbeac764c6b1e40190,3\e\3ed597bbc914dcdbcad89ee9731ed7919cd49e27
++w
++G.idea/sonarlint/issuestore/8/8/88a9255124c95bdc913197c120a8d560edc59c8e,a\e\ae9ddf453f55affea2d6b9e3973cac1eb2efb4e1
++�
++Q.idea/sonarlint/securityhotspotstore/f/5/f54b6d312e8df0f6e5cbbc02feb3da498620ee07,1\f\1f636f5bf62a58060f5d229644bfec219d93f5fb
++w
++G.idea/sonarlint/issuestore/8/2/828077579f4e92baf3401ce84cfd9b34b428be90,a\1\a1d200ab594ed2cc9c5a0bcb5ae2c79cd8523885
++w
++G.idea/sonarlint/issuestore/8/6/8682553173bb0eb1aa78a106e49cb98a1fb02079,a\e\aeb9fc6c0fabd3bf33aa03581b9c9f03000330c9
++w
++G.idea/sonarlint/issuestore/9/2/9238f390a26a401e439d02007fbaea676ac0cba3,f\d\fdfe500f80fea99526c9a3a08e8fe0365be2a5e3
++�
++Q.idea/sonarlint/securityhotspotstore/a/3/a36c54c6ea0de9a87c9d964195ef56b7f89e3392,2\c\2c5cb700c88aa343665696ccf5edb3c11c291d4e
++�
++Q.idea/sonarlint/securityhotspotstore/e/d/ed67eb178d523a4b3f117dcbe0eda5196367ceec,9\a\9a43762646d6c9d33ccdc2a92292c8078d1078f0
++�
++P.idea/shelf/Uncommitted_changes_before_Update_at_4_15_2023_2_28_PM__Changes_.xml,7\6\76ce98f681f9b77f64bf87b962a970da2f59f3c2
++�
++Z.idea/shelf/Uncommitted_changes_before_Update_at_4_15_2023_2_28_PM_[Changes]/shelved.patch,3\d\3de59755adc732c89bab1e2d6756d1bde4d8cafb
++w
++G.idea/sonarlint/issuestore/3/0/30205a209c6ce77c4cfc19a09e6f57c588b7fb88,8\3\83c97b69f1983e71cd804a5894ec167e14452d2c
++w
++G.idea/sonarlint/issuestore/3/c/3cd31ea3ff538c6f2e9f8d0b4ab9c34321136c05,b\4\b4310661d42e77e00abb8de82a658ce6c3d0ba62
++w
++G.idea/sonarlint/issuestore/e/d/ed67eb178d523a4b3f117dcbe0eda5196367ceec,8\a\8a6dae537be9f47878c6964c6ee40cab0ca75e28
++w
++G.idea/sonarlint/issuestore/5/b/5b295da528e98334516b35cbeac764c6b1e40190,a\d\ad89c2c590c35251cf0921759eb97eea62490ee3
++w
++G.idea/sonarlint/issuestore/f/5/f54b6d312e8df0f6e5cbbc02feb3da498620ee07,e\d\ed6ff41fef3c4ef40fccc3198c3bae0663c295c0
++�
++Q.idea/sonarlint/securityhotspotstore/8/6/8682553173bb0eb1aa78a106e49cb98a1fb02079,a\1\a1f6b2cedf0a16b012f8f2450fd7723447a9cf54
++�
++Q.idea/sonarlint/securityhotspotstore/8/2/828077579f4e92baf3401ce84cfd9b34b428be90,0\0\0017a53952a5b74ce5650e5d2da4f060a3c1d474
++�
++Q.idea/sonarlint/securityhotspotstore/9/f/9fe84ebb15faf917b7def6236dba604453cc61e0,b\b\bbf202272a96de5cd6b6828ffdc55fb3ce45289c
+\ No newline at end of file
+Index: .idea/sonarlint/issuestore/index.pb
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/sonarlint/issuestore/index.pb b/.idea/sonarlint/issuestore/index.pb
+--- a/.idea/sonarlint/issuestore/index.pb	(revision 4a7ba2a3d58d919df51f8958ebe301e6d9df20a9)
++++ b/.idea/sonarlint/issuestore/index.pb	(date 1681573354384)
+@@ -1,0 +1,53 @@
++
++w
++G.idea/sonarlint/issuestore/9/f/9fe84ebb15faf917b7def6236dba604453cc61e0,f\0\f0e0f9cec86fe4b939ae22be5264c758801eb28f
++�
++Q.idea/sonarlint/securityhotspotstore/9/2/9238f390a26a401e439d02007fbaea676ac0cba3,f\f\ff93a5dfc341d7a6c4d0a986f88b1cc52351083b
++�
++Z.idea/shelf/Uncommitted_changes_before_Update_at_4_15_2023_3_51_PM_[Changes]/shelved.patch,8\6\86eb87633dc878b76b167925af6d69b954bf5758
++�
++Q.idea/sonarlint/securityhotspotstore/8/8/88a9255124c95bdc913197c120a8d560edc59c8e,9\0\909762385fc6eb20f922a91c6865741308b57f2c
++w
++G.idea/sonarlint/issuestore/a/3/a36c54c6ea0de9a87c9d964195ef56b7f89e3392,5\3\53dba0041108e5f77753d10a251a48c3d20ecad3
++�
++P.idea/shelf/Uncommitted_changes_before_Update_at_4_15_2023_3_51_PM__Changes_.xml,6\b\6be43f4c5d8deaa72c01af7e2f920d3bdcbc4a01
++�
++Q.idea/sonarlint/securityhotspotstore/3/0/30205a209c6ce77c4cfc19a09e6f57c588b7fb88,6\7\67eaf978e530588b1f14f51aeca296c2b659e272
++�
++Q.idea/sonarlint/securityhotspotstore/3/c/3cd31ea3ff538c6f2e9f8d0b4ab9c34321136c05,5\9\5983ea801abf0daa4d5e05f06e5a4859efd3fa3b
++�
++Q.idea/sonarlint/securityhotspotstore/5/b/5b295da528e98334516b35cbeac764c6b1e40190,3\e\3ed597bbc914dcdbcad89ee9731ed7919cd49e27
++w
++G.idea/sonarlint/issuestore/8/8/88a9255124c95bdc913197c120a8d560edc59c8e,a\e\ae9ddf453f55affea2d6b9e3973cac1eb2efb4e1
++�
++Q.idea/sonarlint/securityhotspotstore/f/5/f54b6d312e8df0f6e5cbbc02feb3da498620ee07,1\f\1f636f5bf62a58060f5d229644bfec219d93f5fb
++w
++G.idea/sonarlint/issuestore/8/2/828077579f4e92baf3401ce84cfd9b34b428be90,a\1\a1d200ab594ed2cc9c5a0bcb5ae2c79cd8523885
++w
++G.idea/sonarlint/issuestore/8/6/8682553173bb0eb1aa78a106e49cb98a1fb02079,a\e\aeb9fc6c0fabd3bf33aa03581b9c9f03000330c9
++w
++G.idea/sonarlint/issuestore/9/2/9238f390a26a401e439d02007fbaea676ac0cba3,f\d\fdfe500f80fea99526c9a3a08e8fe0365be2a5e3
++�
++Q.idea/sonarlint/securityhotspotstore/a/3/a36c54c6ea0de9a87c9d964195ef56b7f89e3392,2\c\2c5cb700c88aa343665696ccf5edb3c11c291d4e
++�
++Q.idea/sonarlint/securityhotspotstore/e/d/ed67eb178d523a4b3f117dcbe0eda5196367ceec,9\a\9a43762646d6c9d33ccdc2a92292c8078d1078f0
++�
++P.idea/shelf/Uncommitted_changes_before_Update_at_4_15_2023_2_28_PM__Changes_.xml,7\6\76ce98f681f9b77f64bf87b962a970da2f59f3c2
++�
++Z.idea/shelf/Uncommitted_changes_before_Update_at_4_15_2023_2_28_PM_[Changes]/shelved.patch,3\d\3de59755adc732c89bab1e2d6756d1bde4d8cafb
++w
++G.idea/sonarlint/issuestore/3/0/30205a209c6ce77c4cfc19a09e6f57c588b7fb88,8\3\83c97b69f1983e71cd804a5894ec167e14452d2c
++w
++G.idea/sonarlint/issuestore/3/c/3cd31ea3ff538c6f2e9f8d0b4ab9c34321136c05,b\4\b4310661d42e77e00abb8de82a658ce6c3d0ba62
++w
++G.idea/sonarlint/issuestore/e/d/ed67eb178d523a4b3f117dcbe0eda5196367ceec,8\a\8a6dae537be9f47878c6964c6ee40cab0ca75e28
++w
++G.idea/sonarlint/issuestore/5/b/5b295da528e98334516b35cbeac764c6b1e40190,a\d\ad89c2c590c35251cf0921759eb97eea62490ee3
++w
++G.idea/sonarlint/issuestore/f/5/f54b6d312e8df0f6e5cbbc02feb3da498620ee07,e\d\ed6ff41fef3c4ef40fccc3198c3bae0663c295c0
++�
++Q.idea/sonarlint/securityhotspotstore/8/6/8682553173bb0eb1aa78a106e49cb98a1fb02079,a\1\a1f6b2cedf0a16b012f8f2450fd7723447a9cf54
++�
++Q.idea/sonarlint/securityhotspotstore/8/2/828077579f4e92baf3401ce84cfd9b34b428be90,0\0\0017a53952a5b74ce5650e5d2da4f060a3c1d474
++�
++Q.idea/sonarlint/securityhotspotstore/9/f/9fe84ebb15faf917b7def6236dba604453cc61e0,b\b\bbf202272a96de5cd6b6828ffdc55fb3ce45289c
+\ No newline at end of file
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"5073210c-846a-4274-bc76-2e6130a4e9c5\" name=\"Changes\" comment=\"CSV para JSON com estrutura corrigida\">\r\n      <change afterPath=\"$PROJECT_DIR$/src/main/java/Functions.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/horarios.json\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/horarios.json\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/pom.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/pom.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/Main.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/Main.java\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Class\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"GitToolBoxStore\">\r\n    <option name=\"projectConfigVersion\" value=\"5\" />\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"2OPjVcdFrN9JAn9IatUekJt9Ebf\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\">\r\n    <ConfirmationsSetting value=\"2\" id=\"Add\" />\r\n  </component>\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">{\r\n  &quot;keyToString&quot;: {\r\n    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,\r\n    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,\r\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\r\n    &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;true&quot;,\r\n    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,\r\n    &quot;git-widget-placeholder&quot;: &quot;master&quot;,\r\n    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,\r\n    &quot;last_opened_file_path&quot;: &quot;C:/Users/carlo/OneDrive/Desktop/json-20230227.jar&quot;,\r\n    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,\r\n    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,\r\n    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,\r\n    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,\r\n    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,\r\n    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,\r\n    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,\r\n    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;,\r\n    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;\r\n  }\r\n}</component>\r\n  <component name=\"RunManager\" selected=\"Application.Main\">\r\n    <configuration name=\"Horario\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"Horario\" />\r\n      <module name=\"ES-2023-2Sem-Terca-Feira-LEI-GrupoC\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"Main\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"Main\" />\r\n      <module name=\"ES-2023-2Sem-Terca-Feira-LEI-GrupoC\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <recent_temporary>\r\n      <list>\r\n        <item itemvalue=\"Application.Main\" />\r\n        <item itemvalue=\"Application.Horario\" />\r\n      </list>\r\n    </recent_temporary>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"5073210c-846a-4274-bc76-2e6130a4e9c5\" name=\"Changes\" comment=\"\" />\r\n      <created>1681469140000</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1681469140000</updated>\r\n      <workItem from=\"1681469141889\" duration=\"1800000\" />\r\n      <workItem from=\"1681558403482\" duration=\"3062000\" />\r\n      <workItem from=\"1681566035142\" duration=\"1661000\" />\r\n      <workItem from=\"1681568474741\" duration=\"1221000\" />\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"init_proj\">\r\n      <created>1681470389810</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1681470389810</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"CSV para JSON sem estrutura\">\r\n      <created>1681477533280</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1681477533280</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00003\" summary=\"CSV para JSON com estrutura\">\r\n      <created>1681562358177</created>\r\n      <option name=\"number\" value=\"00003\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1681562358177</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00004\" summary=\"CSV para JSON com estrutura corrigida\">\r\n      <created>1681568843883</created>\r\n      <option name=\"number\" value=\"00004\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1681568843883</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"5\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <option name=\"ADD_EXTERNAL_FILES_SILENTLY\" value=\"true\" />\r\n    <MESSAGE value=\"init_proj\" />\r\n    <MESSAGE value=\"CSV para JSON sem estrutura\" />\r\n    <MESSAGE value=\"CSV para JSON com estrutura\" />\r\n    <MESSAGE value=\"CSV para JSON com estrutura corrigida\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"CSV para JSON com estrutura corrigida\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 4a7ba2a3d58d919df51f8958ebe301e6d9df20a9)
++++ b/.idea/workspace.xml	(date 1681571024663)
+@@ -4,13 +4,7 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="5073210c-846a-4274-bc76-2e6130a4e9c5" name="Changes" comment="CSV para JSON com estrutura corrigida">
+-      <change afterPath="$PROJECT_DIR$/src/main/java/Functions.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/horarios.json" beforeDir="false" afterPath="$PROJECT_DIR$/horarios.json" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
+-    </list>
++    <list default="true" id="5073210c-846a-4274-bc76-2e6130a4e9c5" name="Changes" comment="JSON para CSV incompleto" />
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+@@ -124,7 +118,14 @@
+       <option name="project" value="LOCAL" />
+       <updated>1681568843883</updated>
+     </task>
+-    <option name="localTasksCounter" value="5" />
++    <task id="LOCAL-00005" summary="JSON para CSV incompleto">
++      <created>1681570992399</created>
++      <option name="number" value="00005" />
++      <option name="presentableId" value="LOCAL-00005" />
++      <option name="project" value="LOCAL" />
++      <updated>1681570992399</updated>
++    </task>
++    <option name="localTasksCounter" value="6" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+@@ -147,6 +148,7 @@
+     <MESSAGE value="CSV para JSON sem estrutura" />
+     <MESSAGE value="CSV para JSON com estrutura" />
+     <MESSAGE value="CSV para JSON com estrutura corrigida" />
+-    <option name="LAST_COMMIT_MESSAGE" value="CSV para JSON com estrutura corrigida" />
++    <MESSAGE value="JSON para CSV incompleto" />
++    <option name="LAST_COMMIT_MESSAGE" value="JSON para CSV incompleto" />
+   </component>
+ </project>
+\ No newline at end of file
