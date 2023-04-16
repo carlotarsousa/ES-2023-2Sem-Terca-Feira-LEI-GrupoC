@@ -4,14 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5073210c-846a-4274-bc76-2e6130a4e9c5" name="Changes" comment="JSON para CSV incompleto">
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/8/88a9255124c95bdc913197c120a8d560edc59c8e" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/f/9fe84ebb15faf917b7def6236dba604453cc61e0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/8/8/88a9255124c95bdc913197c120a8d560edc59c8e" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/9/f/9fe84ebb15faf917b7def6236dba604453cc61e0" beforeDir="false" />
+    <list default="true" id="5073210c-846a-4274-bc76-2e6130a4e9c5" name="Changes" comment="loadFile e saveFile a partir de url">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Functions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Functions.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -104,7 +99,7 @@
       <workItem from="1681570891966" duration="404000" />
       <workItem from="1681571300289" duration="1309000" />
       <workItem from="1681575000887" duration="1186000" />
-      <workItem from="1681656962910" duration="2458000" />
+      <workItem from="1681656962910" duration="3495000" />
     </task>
     <task id="LOCAL-00001" summary="init_proj">
       <created>1681470389810</created>
@@ -155,7 +150,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681575550384</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="loadFile e saveFile a partir de url">
+      <created>1681659549273</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1681659549273</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -191,7 +193,8 @@
     <MESSAGE value="CSV para JSON com estrutura" />
     <MESSAGE value="CSV para JSON com estrutura corrigida" />
     <MESSAGE value="JSON para CSV incompleto" />
-    <option name="LAST_COMMIT_MESSAGE" value="JSON para CSV incompleto" />
+    <MESSAGE value="loadFile e saveFile a partir de url" />
+    <option name="LAST_COMMIT_MESSAGE" value="loadFile e saveFile a partir de url" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
