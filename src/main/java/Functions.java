@@ -79,6 +79,7 @@ public class Functions {
         }
     }
 
+    //Função para converter de JSON para CSV
     public static void convertJsonToCsv(String jsonFilePath, String csvFilePath) {
         Logger logger = Logger.getLogger(Main.class.getName());
         try {
