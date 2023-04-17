@@ -26,7 +26,20 @@ public class Functions {
         throw new IllegalStateException("Aux functions.Main.Functions");
     }
 
-    //Função para converter de CSV para JSON
+    /**
+
+     Converts a CSV file containing a schedule of classes to a JSON file.
+
+     Each row in the CSV file represents a class and must have the following columns in this order:
+     Curso, Unidade Curricular, Id Turno, Turma, Inscritos no turno, Dia da semana, Hora início da aula, Hora fim da aula,
+     Data da aula, Sala atribuída à aula, Lotação da sala.
+
+     The resulting JSON file will have an array of objects, each representing a class.
+
+     @param loadFilePath the path of the CSV file to be converted.
+     @param saveFilePath the path of the JSON file to be saved.
+     @throws FileNotFoundException if the CSV file specified by loadFilePath cannot be found.
+     */
     public static void convertCSVtoJSON(String loadFilePath, String saveFilePath) throws FileNotFoundException {
         try (BufferedReader br = loadFile(loadFilePath)) {
             if(br != null){
@@ -81,7 +94,21 @@ public class Functions {
         }
     }
 
-    //Função para converter de JSON para CSV
+    /**
+
+     This method receives a JSON file path and a CSV file path, reads the JSON file,
+     and converts its content to CSV format. The CSV file is then saved in the provided path.
+
+     The CSV format follows a specific structure with the following columns:
+     Curso;Unidade Curricular;Turno;Turma;Inscritos no turno;Dia da semana;
+     Hora início da aula;Hora fim da aula;Data da aula;Sala atribuída à aula;Lotação da sala
+
+     The method throws an exception if there is any error while converting the file.
+
+     @param jsonFilePath a string representing the path to the JSON file to be converted
+     @param csvFilePath a string representing the path where the CSV file will be saved
+     @throws Exception if there is any error while converting the file
+     */
     public static void convertJSONtoCSV(String jsonFilePath, String csvFilePath) {
         try {
             Path path = Paths.get(jsonFilePath);
@@ -124,6 +151,13 @@ public class Functions {
         }
     }
 
+    /**
+
+     This method loads a file from a given file path and returns a BufferedReader object to read the file's contents.
+
+     @param filePath The path of the file to be loaded.
+     @return A BufferedReader object to read the contents of the file.
+     */
     private static BufferedReader loadFile(String filePath) {
         if(filePath.startsWith("http")){
             try {
@@ -143,6 +177,13 @@ public class Functions {
         return null;
     }
 
+    /**
+
+     This method creates a new file with the given file path and returns a BufferedWriter object to write to the file.
+
+     @param filePath The path of the file to be created.
+     @return A BufferedWriter object to write to the new file.
+     */
     private static BufferedWriter saveFile(String filePath) {
         if(filePath.startsWith("http") || filePath.startsWith("www")){
             try {
