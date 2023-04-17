@@ -125,23 +125,40 @@ public class Functions {
     }
 
     private static BufferedReader loadFile(String filePath) {
-        try {
-            URI uri = new URI(filePath);
-            URL url = uri.toURL();
-            return new BufferedReader(new InputStreamReader(url.openStream()));
-        } catch (IOException | URISyntaxException e) {
-            logger.log(Level.INFO, "Erro a ler o ficheiro");
+        if(filePath.startsWith("http")){
+            try {
+                URI uri = new URI(filePath);
+                URL url = uri.toURL();
+                return new BufferedReader(new InputStreamReader(url.openStream()));
+            } catch (IOException | URISyntaxException e) {
+                logger.log(Level.INFO, "Erro a ler o ficheiro");
+            }
+        } else {
+            try {
+                return new BufferedReader(new FileReader(filePath));
+            } catch (FileNotFoundException e) {
+                logger.log(Level.INFO, "Erro a ler o ficheiro");
+            }
         }
         return null;
     }
 
     private static BufferedWriter saveFile(String filePath) {
-        try {
-            URI uri = new URI(filePath);
-            URL url = uri.toURL();
-            return new BufferedWriter(new OutputStreamWriter(url.openConnection().getOutputStream()));
-        } catch (IOException | URISyntaxException e) {
-            logger.log(Level.INFO, "Erro a guardar o ficheiro");        }
+        if(filePath.startsWith("http") || filePath.startsWith("www")){
+            try {
+                URI uri = new URI(filePath);
+                URL url = uri.toURL();
+                return new BufferedWriter(new OutputStreamWriter(url.openConnection().getOutputStream()));
+            } catch (IOException | URISyntaxException e) {
+                logger.log(Level.INFO, "Erro a guardar o ficheiro");
+            }
+        } else {
+            try {
+                return new BufferedWriter(new FileWriter(filePath));
+            } catch (IOException e) {
+                logger.log(Level.INFO, "Erro a guardar o ficheiro");
+            }
+        }
         return null;
     }
 }

@@ -6,8 +6,7 @@ import static functions.Functions.convertJSONtoCSV;
 
 public class Main{
     public static void main(String[] args) throws IOException {
-//        Functions.convertCSVtoJSON("C:\\Users\\carlo\\OneDrive - ISCTE-IUL\\Escola\\ISCTE 3ºANO\\2ºSemestre\\ES\\Projeto\\ES-2023-2Sem-Terca-Feira-LEI-GrupoC\\horario.json", "C:\\Users\\carlo\\OneDrive - ISCTE-IUL\\Escola\\ISCTE 3ºANO\\2ºSemestre\\ES\\Projeto\\ES-2023-2Sem-Terca-Feira-LEI-GrupoC\\horario.csv");
-//        Functions.convertJSONtoCSV("horario.json");
-        convertJSONtoCSV("horario.json", "horario.csv");
+        //Functions.convertCSVtoJSON("C:\\Users\\gmigu\\Documents\\3ano\\2sem\\ES\\src\\horario_exemplo.csv", "C:\\Users\\gmigu\\Documents\\3ano\\2sem\\ES\\horario1.json");
+            //Functions.convertJSONtoCSV("C:\\Users\\gmigu\\Documents\\3ano\\2sem\\ES\\horario1.json","C:\\Users\\gmigu\\Documents\\3ano\\2sem\\ES\\horario1.csv");
     }
 }
