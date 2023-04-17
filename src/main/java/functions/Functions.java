@@ -20,13 +20,14 @@ public class Functions {
     private static final String UC = "Unidade Curricular";
     private static final String DATA = "Data da aula";
 
+    private static final Logger logger = Logger.getLogger(Functions.class.getName());
+
     private Functions() {
         throw new IllegalStateException("Aux functions.Main.Functions");
     }
 
     //Função para converter de CSV para JSON
     public static void convertCSVtoJSON(String loadFilePath, String saveFilePath) throws FileNotFoundException {
-        Logger logger = Logger.getLogger(Functions.class.getName());
         try (BufferedReader br = loadFile(loadFilePath)) {
             if(br != null){
                 String line;
@@ -75,16 +76,13 @@ public class Functions {
             throw new FileNotFoundException("Erro ao ler o ficheiro CSV: " + e.getMessage());
         } catch (JSONException e) {
             logger.log(Level.INFO, "Erro ao converter de CSV para JSON: ");
-            e.printStackTrace();
         } catch (NumberFormatException e) {
             logger.log(Level.INFO, "Erro ao converter de CSV para JSON: formato de número inválido: ");
-            e.printStackTrace();
         }
     }
 
     //Função para converter de JSON para CSV
     public static void convertJSONtoCSV(String jsonFilePath, String csvFilePath) {
-        Logger logger = Logger.getLogger(Functions.class.getName());
         try {
             Path path = Paths.get(jsonFilePath);
             String jsonContent = new String(Files.readAllBytes(path));
@@ -123,7 +121,6 @@ public class Functions {
 
         } catch (Exception e) {
             logger.log(Level.INFO, "Error converting JSON to CSV:");
-            e.printStackTrace();
         }
     }
 
@@ -133,7 +130,7 @@ public class Functions {
             URL url = uri.toURL();
             return new BufferedReader(new InputStreamReader(url.openStream()));
         } catch (IOException | URISyntaxException e) {
-            e.printStackTrace();
+            logger.log(Level.INFO, "Erro a ler o ficheiro");
         }
         return null;
     }
@@ -144,8 +141,7 @@ public class Functions {
             URL url = uri.toURL();
             return new BufferedWriter(new OutputStreamWriter(url.openConnection().getOutputStream()));
         } catch (IOException | URISyntaxException e) {
-            e.printStackTrace();
-        }
+            logger.log(Level.INFO, "Erro a guardar o ficheiro");        }
         return null;
     }
 }
