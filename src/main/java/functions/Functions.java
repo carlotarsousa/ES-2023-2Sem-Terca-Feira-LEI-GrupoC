@@ -156,7 +156,7 @@ public class Functions {
      This method loads a file from a given file path and returns a BufferedReader object to read the file's contents.
 
      @param filePath The path of the file to be loaded.
-     @return A BufferedReader object to read the contents of the file.
+     @return A BufferedReader object to read the contents of the file
      */
     private static BufferedReader loadFile(String filePath) {
         if(filePath.startsWith("http")){
